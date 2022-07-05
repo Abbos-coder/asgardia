@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="navbar">
+    <div class="navbar container">
       <ul class="logoContainer">
         <li><img src="/logo-only.svg" class="logoImg" alt="logo" /></li>
         <li><a href="#" class="logo">Asgardia</a></li>
@@ -46,6 +46,10 @@ export default {
 </script>
 
 <style scoped>
+.v-application ul,
+.v-application ol {
+  padding-left: 0 !important;
+}
 @media (min-width: 800px) {
   .mobile-logo {
     text-decoration: underline;
@@ -53,23 +57,23 @@ export default {
   }
 }
 nav {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 70px;
-  background: #242524;
+  background: #101a33;
   z-index: 100000;
 }
 
 nav .navbar {
   height: 100%;
-  max-width: 1200px;
+  width: 100%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 50px 0 0;
 }
 
 .logoContainer {

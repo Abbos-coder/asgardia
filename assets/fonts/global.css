@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "bruno-ace-sc-regular";
+  src: local("bruno-ace-sc-regular"),
+    url(~assets/fonts/Bruno-Ace-SC-Regular.ttf) format("truetype");
+}
+
+/* html {
+  font-family: "bruno-ace-sc-regular", sans-serif;
+} */
