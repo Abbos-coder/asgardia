@@ -2,7 +2,7 @@
   <v-app dark>
     <v-main>
       <v-container>
-        <Navbar />
+        <Navbar1 />
         <Nuxt />
       </v-container>
     </v-main>

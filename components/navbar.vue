@@ -3,7 +3,7 @@
     <div class="navbar">
       <ul class="logoContainer">
         <li><img src="/logo-only.svg" class="logoImg" alt="logo" /></li>
-        <li><a href="#" class="logo">Asgardia</a></li>
+        <li><a href="#" class="logo text-caption">Компания- <br>разработчик ПО</a></li>
       </ul>
 
       <div class="nav-links" :class="{ opened: menuIsActive }">
@@ -20,7 +20,25 @@
               <hr />
             </a>
           </li>
+          <v-row class="navbar__controls ml-10">
+            <img class="navbar__icon" src="/phone.svg" alt="phone icon">
+            <a href="tel:+998998573216" class="text-caption">+998 (99) 857 32 16</a>
+            <v-menu v-model="languageMenu" offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn class="text-capitalize white--text ml-5" v-bind="attrs" v-on="on" text>
+                  {{ activeLang }}
+                  <v-icon small right>mdi-menu-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list dense>
+                <v-list-item v-for="(lang, index) in langs" :key="index" @click="handleMenuItemClick(lang)">
+                  <v-list-item-title class="d-flex align-center"><img :src="lang.icon" alt="flag" class="flag mr-2"> {{ lang.title }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </v-row>
         </ul>
+
       </div>
       <div class="log">
         <i class="bx bx-menu" @click="menuEventButton"></i>
@@ -33,11 +51,25 @@
 export default {
   data() {
     return {
+      langs: [
+        { title: 'English', icon: '/us.svg' },
+        { title: 'Uzbek', icon: '/uz.svg' },
+        { title: 'Russian', icon: '/ru.svg'}
+      ],
+      activeLang: 'Russian',
+      dialog: false,
+      languageMenu: false,
       menuIsActive: false,
       nav_items: ["Услуги", "О компании", "Портфолио", "Прайс", "Контакты"],
     };
   },
   methods: {
+    handleMenuItemClick (lang) {
+      this.activeLang = lang.title;
+    },
+    handleAddLanguage () {
+      alert('handle add new language!');
+    },
     menuEventButton() {
       this.menuIsActive = !this.menuIsActive;
     },
@@ -45,7 +77,39 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.flag {
+  width: 25px;
+}
+.links {
+  display: flex;
+}
+.navbar {
+  &__icon {
+    //width: 40px;
+  }
+  &__controls {
+    display: flex;
+    align-items: center;
+    > img {
+      width: 20px;
+      margin-left: auto;
+    }
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 12px;
+      color: #FECA2E;
+      margin-left: 10px;
+
+    }
+  }
+}
+.logoContainer li {
+  margin: 0 0 0 12px;
+
+  line-height: 0 !important;
+}
 @media (min-width: 800px) {
   .mobile-logo {
     text-decoration: underline;
@@ -73,7 +137,10 @@ nav .navbar {
 }
 
 .logoContainer {
+  margin-top: 10px;
   list-style: none;
+  display: flex;
+  align-items: flex-start;
 }
 .logoContainer li {
   display: inline-block;
@@ -94,6 +161,8 @@ nav .navbar .logo {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.4s ease;
+  vertical-align: middle;
+
 }
 
 nav .navbar .logo:hover {
