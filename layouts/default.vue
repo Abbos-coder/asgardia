@@ -3,6 +3,7 @@
     <v-main>
       <Navbar />
       <Nuxt />
+      <Footer/>
     </v-main>
   </v-app>
 </template>
