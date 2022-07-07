@@ -1,11 +1,11 @@
 <template>
   <nav>
-    <div class="navbar container">
+    <div class="navbar">
       <ul class="logoContainer">
         <li><img src="/logo-only.svg" class="logoImg" alt="logo" /></li>
-        <li><a href="#" class="logo">Asgardia</a></li>
+        <li><a href="#" class="logo text-caption">Компания- <br>разработчик ПО</a></li>
       </ul>
-
+      <v-spacer/>
       <div class="nav-links" :class="{ opened: menuIsActive }">
         <div class="sidebar-logo">
           <img src="/logo-only.svg" alt="logo" />
@@ -17,10 +17,27 @@
           <li v-for="(link, idx) in nav_items" :key="idx">
             <a href="#">
               {{ link }}
-              <hr />
             </a>
           </li>
         </ul>
+      </div>
+      <v-spacer/>
+      <div class="navbar__controls d-flex">
+        <img class="navbar__icon" src="/phone.svg" alt="phone icon">
+        <a href="tel:+998998573216" class="text-caption">+998 (99) 857 32 16</a>
+        <v-menu v-model="languageMenu" offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn class="text-capitalize white--text ml-5" v-bind="attrs" v-on="on" text>
+              {{ activeLang }}
+              <v-icon small right>mdi-menu-down</v-icon>
+            </v-btn>
+          </template>
+          <v-list dense>
+            <v-list-item v-for="(lang, index) in langs" :key="index" @click="handleMenuItemClick(lang)">
+              <v-list-item-title class="d-flex align-center"><img :src="lang.icon" alt="flag" class="flag mr-2"> {{ lang.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </div>
       <div class="log">
         <i class="bx bx-menu" @click="menuEventButton"></i>
@@ -33,11 +50,25 @@
 export default {
   data() {
     return {
+      langs: [
+        { title: 'English', icon: '/us.svg' },
+        { title: 'Uzbek', icon: '/uz.svg' },
+        { title: 'Russian', icon: '/ru.svg'}
+      ],
+      activeLang: 'Russian',
+      dialog: false,
+      languageMenu: false,
       menuIsActive: false,
       nav_items: ["Услуги", "О компании", "Портфолио", "Прайс", "Контакты"],
     };
   },
   methods: {
+    handleMenuItemClick (lang) {
+      this.activeLang = lang.title;
+    },
+    handleAddLanguage () {
+      alert('handle add new language!');
+    },
     menuEventButton() {
       this.menuIsActive = !this.menuIsActive;
     },
@@ -45,10 +76,38 @@ export default {
 };
 </script>
 
-<style scoped>
-.v-application ul,
-.v-application ol {
-  padding-left: 0 !important;
+<style lang="scss" scoped>
+.flag {
+  width: 25px;
+}
+.links {
+  display: flex;
+}
+.navbar {
+  &__icon {
+    //width: 40px;
+  }
+  &__controls {
+    display: flex;
+    align-items: center;
+    > img {
+      width: 20px;
+      margin-left: auto;
+    }
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 12px;
+      color: #FECA2E;
+      margin-left: 10px;
+
+    }
+  }
+}
+.logoContainer li {
+  margin: 0 0 0 12px;
+
+  line-height: 0 !important;
 }
 @media (min-width: 800px) {
   .mobile-logo {
@@ -57,27 +116,30 @@ export default {
   }
 }
 nav {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 70px;
-  background: #101a33;
+  background: #101A33;
   z-index: 100000;
 }
 
 nav .navbar {
   height: 100%;
-  width: 100%;
+  min-width: 100%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px 0 0;
+  padding: 0 50px;
 }
 
 .logoContainer {
+  margin-top: 10px;
   list-style: none;
+  display: flex;
+  align-items: flex-start;
 }
 .logoContainer li {
   display: inline-block;
@@ -94,17 +156,22 @@ nav .navbar {
 
 nav .navbar .logo {
   color: #fff;
-  font-size: 30px;
-  font-weight: 600;
   text-decoration: none;
-  transition: all 0.4s ease;
+  vertical-align: middle;
+
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 
 nav .navbar .logo:hover {
-  color: #04ed93;
+  color: #F7CA2F;
 }
 
 nav .navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   line-height: 70px;
   vertical-align: middle;
@@ -128,26 +195,33 @@ nav .navbar .nav-links .links li a {
   white-space: nowrap;
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 0px solid transparent;
+  border-bottom: 0 solid transparent;
   transition: all 0.4s ease;
 }
 
 nav .navbar .nav-links .links li:hover a {
-  color: #04ed93;
+  color: #F7CA2F;
 }
-nav .navbar .nav-links .links li a hr {
-  width: 0px;
-  display: hidden;
-  border: none;
-  border-radius: 70px;
-  height: 1.8px;
-  background: #04ed93;
-  transform: translateY(-1300%);
+//nav .navbar .nav-links .links li a hr {
+//  width: 0;
+//  display: none;
+//  border: none;
+//  border-radius: 70px;
+//  height: 1.8px;
+//  background: #F7CA2F;
+//  transform: translateY(-1300%);
+//  transition: all 0.4s ease;
+//}
+nav .navbar .nav-links .links li a:after {
+  content: '';
+  width: 0;
+  display: block;
+  height: 2px;
+  background: #F7CA2F;
   transition: all 0.4s ease;
 }
 
-nav .navbar .nav-links .links li:hover a hr {
-  display: block;
+nav .navbar .nav-links .links li:hover a:after {
   width: 100%;
   transition: all 0.4s ease;
 }
@@ -197,6 +271,9 @@ nav .navbar .nav-links .sidebar-logo .bx-x {
 }
 
 @media (max-width: 800px) {
+  nav > .header__subtitle {
+    font-size: 20px !important;
+  }
   nav .navbar .nav-links {
     display: block;
     position: fixed;
@@ -246,7 +323,7 @@ nav .navbar .nav-links .sidebar-logo .bx-x {
   nav .navbar .nav-links li a hr,
   nav .navbar .nav-links li:hover a hr {
     display: none;
-    width: 0px;
+    width: 0;
     background: transparent;
   }
   nav .navbar .nav-links .links li {

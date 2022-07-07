@@ -21,6 +21,10 @@ export default {
       },
     ],
     script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js', body: true},
+      { src: 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js', body: true},
+      { src: 'https://cdn.jsdelivr.net/npm/vanta@0.5.22/dist/vanta.net.min.js', body: true},
+      { src: 'https://code.jquery.com/jquery-3.6.0.min.js'},
       {
         src: "https://kit.fontawesome.com/215ced7b1f.js",
         crossorigin: "anonymous",
@@ -32,7 +36,9 @@ export default {
   css: ["~/assets/fonts/global.css", "~/assets/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    "~/plugins/swiper.client.js",
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
