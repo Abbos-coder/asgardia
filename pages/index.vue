@@ -9,11 +9,13 @@
           <div class="header__body">
             <div class="header__title">asgardia <sup>tm</sup></div>
             <div class="header__subtitle">надёжное программное обеспечение </div>
-            <v-btn color="amber" class="header__btn" outlined rounded>обсудить проект</v-btn>
+            <div class="d-flex justify-center justify-lg-start">
+              <v-btn color="amber" class="header__btn" outlined rounded>обсудить проект</v-btn>
+            </div>
           </div>
         </div>
       </v-col>
-      <v-spacer/>
+      <v-spacer class="spacer-sm"/>
       <v-col>
         <div class="header__info">
           <div class="d-flex align-center">
@@ -130,28 +132,38 @@
       <div class="prices__body container">
         <div class="prices__middle text-center">Средняя стоимость часа разработки - <span>$30</span> </div>
         <p class="text-center contact__title">Вы готовы обсудить проект?</p>
-        <div class="d-flex justify-center contact">
-          <p>Заполните форму и мы свяжемся с Вами
-            в ближайшее время, чтобы обсудить проект:</p>
-          <div>
-            <v-text-field
-              label="Ваше имя"
-              dark
-            />
-          </div>
-          <div>
-            <v-text-field
-              label="Ваш телефон"
-              type="number"
-              hide-spin-buttons
-              dark
-            />
-          </div>
-        </div>
+        <v-row justify="center" class="mb-9">
+          <v-col cols="12" sm="12" lg="4">
+            <p>Заполните форму и мы свяжемся с Вами
+              в ближайшее время, чтобы обсудить проект:
+            </p>
+          </v-col>
+          <v-col cols="12" sm="12" lg="3">
+            <div class="name">
+              <v-text-field
+                label="Ваше имя"
+                dark
+              />
+            </div>
+          </v-col>
+          <v-col cols="12" sm="12" lg="3">
+            <div class="lastname name">
+              <v-text-field
+                label="Ваш телефон"
+                type="number"
+                hide-spin-buttons
+                dark
+              />
+            </div>
+          </v-col>
+        </v-row>
         <div class="d-flex justify-center">
           <v-btn outlined rounded color="amber">Оценить проект</v-btn>
         </div>
       </div>
+    </div>
+    <div class="go-up" @click="goTop">
+      <v-icon color="white" size="45">mdi-chevron-up</v-icon>
     </div>
    </div>
 
@@ -159,6 +171,7 @@
 
 <script>
 export default {
+  scrollToTop: true,
   name: "IndexPage",
   data: () => ({
     carousel: null
@@ -166,10 +179,16 @@ export default {
   created() {
   },
   methods: {
+    goTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
   },
   mounted() {
     VANTA.RINGS({
-      el: "#header",
+      el: "#secure",
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
@@ -180,7 +199,7 @@ export default {
       backgroundColor: 0x000e2d,
     });
     VANTA.NET({
-      el: "#secure",
+      el: "#header",
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
@@ -189,9 +208,18 @@ export default {
       scale: 1.00,
       scaleMobile: 1.00,
       color: 0x3fff60,
-      backgroundColor: 0x202020
+      backgroundColor: 0x000e2d
     })
+    const go_up = document.querySelector('.go-up')
+    window.onscroll = () => {
+      if (window.scrollY > 450) {
+        go_up.classList.remove("hide");
+      } else if (window.scrollY < 350) {
+        go_up.classList.add("hide");
+      }
+    };
   }
+
 
 };
 </script>
@@ -200,4 +228,5 @@ export default {
 .theme--light {
   background: transparent !important;
 }
+
 </style>

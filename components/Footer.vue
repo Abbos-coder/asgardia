@@ -2,13 +2,13 @@
   <div class="footer">
     <v-container>
       <v-row>
-        <v-col>
+        <v-col cols="12" sm="12" lg="4">
           <div class="footer__logo">
             <img src="/logo.svg" alt="logo">
           </div>
-          <p>© 2022 OOO “Asgardia Team”</p>
+            <p class="mt-16">© 2022 OOO “Asgardia Team”</p>
         </v-col>
-        <v-col>
+        <v-col cols="12" sm="12" lg="4">
           <div class="footer__menu">
             <div class="footer__menu-title ">Услуги</div>
             <div class="footer__menu-item service"><a href="#">О компании</a></div>
@@ -16,7 +16,7 @@
             <div class="footer__menu-item service"><a href="#">Прайс</a></div>
           </div>
         </v-col>
-        <v-col>
+        <v-col cols="12" sm="12" lg="4">
           <div class="footer__menu-title">Контакты</div>
           <div class="footer__menu-item d-flex align-center">
             <img src="/phone.svg" alt="phone icon">
