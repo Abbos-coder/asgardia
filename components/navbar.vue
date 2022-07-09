@@ -1,9 +1,9 @@
 <template>
   <nav>
-    <div class="navbar">
+    <div class="navbar container">
       <ul class="logoContainer">
         <li><img src="/logo-only.svg" class="logoImg" alt="logo" /></li>
-        <li><a href="#" class="logo text-caption">Компания- <br>разработчик ПО</a></li>
+        <li><a href="#" class="text-caption logo">Компания- <br>разработчик ПО</a></li>
       </ul>
       <v-spacer/>
       <div class="nav-links" :class="{ opened: menuIsActive }">
@@ -51,11 +51,11 @@ export default {
   data() {
     return {
       langs: [
-        { title: 'English', icon: '/us.svg' },
-        { title: 'Uzbek', icon: '/uz.svg' },
-        { title: 'Russian', icon: '/ru.svg'}
+        { title: 'Eng', icon: '/us.svg' },
+        { title: 'Uz', icon: '/uz.svg' },
+        { title: 'Ru', icon: '/ru.svg'}
       ],
-      activeLang: 'Russian',
+      activeLang: 'Ru',
       dialog: false,
       languageMenu: false,
       menuIsActive: false,
@@ -76,7 +76,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@media (max-width: 414px) {
+  .v-application .text-caption {
+    font-size: 0.60rem !important;
+    line-height: 1rem !important;
+    vertical-align: middle;
+  }
+}
 .flag {
   width: 25px;
 }
@@ -84,9 +91,6 @@ export default {
   display: flex;
 }
 .navbar {
-  &__icon {
-    //width: 40px;
-  }
   &__controls {
     display: flex;
     align-items: center;
@@ -119,8 +123,8 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 70px;
+  width: 100vw;
   background: #101A33;
   z-index: 100000;
 }
@@ -132,7 +136,7 @@ nav .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  //padding: 0 50px;
 }
 
 .logoContainer {
@@ -202,16 +206,6 @@ nav .navbar .nav-links .links li a {
 nav .navbar .nav-links .links li:hover a {
   color: #F7CA2F;
 }
-//nav .navbar .nav-links .links li a hr {
-//  width: 0;
-//  display: none;
-//  border: none;
-//  border-radius: 70px;
-//  height: 1.8px;
-//  background: #F7CA2F;
-//  transform: translateY(-1300%);
-//  transition: all 0.4s ease;
-//}
 nav .navbar .nav-links .links li a:after {
   content: '';
   width: 0;
@@ -260,7 +254,6 @@ nav .navbar .nav-links .sidebar-logo .bx-x {
 @media (max-width: 954px) {
   nav .navbar {
     max-width: 100%;
-    padding: 0 25px;
   }
   nav .navbar .nav-links .links li {
     padding: 0 10px;
@@ -285,6 +278,7 @@ nav .navbar .nav-links .sidebar-logo .bx-x {
     padding: 20px;
     line-height: 40px;
     transition: all 0.4s ease;
+    z-index: 1000;
   }
 
   .logoImg {
@@ -347,5 +341,8 @@ nav .navbar .nav-links .sidebar-logo .bx-x {
     font-size: 16px;
     margin-top: 15px;
   }
+}
+.v-application ul, .v-application ol {
+  padding-left: 0 !important;
 }
 </style>
