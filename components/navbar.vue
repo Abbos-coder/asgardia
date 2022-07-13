@@ -3,9 +3,13 @@
     <div class="navbar container">
       <ul class="logoContainer">
         <li><img src="/logo-only.svg" class="logoImg" alt="logo" /></li>
-        <li><a href="#" class="text-caption logo">Компания- <br>разработчик ПО</a></li>
+        <li>
+          <a href="#main" class="text-caption logo"
+            >Компания- <br />разработчик ПО</a
+          >
+        </li>
       </ul>
-      <v-spacer/>
+      <v-spacer />
       <div class="nav-links" :class="{ opened: menuIsActive }">
         <div class="sidebar-logo">
           <img src="/logo-only.svg" alt="logo" />
@@ -14,27 +18,56 @@
           <i class="bx bx-x" @click="menuEventButton"></i>
         </div>
         <ul class="links">
-          <li v-for="(link, idx) in nav_items" :key="idx">
-            <a href="#">
-              {{ link }}
-            </a>
+          <li>
+            <a href="#services">{{ $t("navbar.services") }}</a>
+          </li>
+          <li>
+            <a href="#about">{{ $t("navbar.about") }}</a>
+          </li>
+          <li>
+            <a href="#portfolio">{{ $t("navbar.portfolio") }}</a>
+          </li>
+          <li>
+            <a href="#price">{{ $t("navbar.price") }}</a>
+          </li>
+          <li>
+            <a href="#contact">{{ $t("navbar.contact") }}</a>
           </li>
         </ul>
       </div>
-      <v-spacer/>
+      <v-spacer />
       <div class="navbar__controls d-flex">
-        <img class="navbar__icon" src="/phone.svg" alt="phone icon">
-        <a href="tel:+998998573216" class="text-caption">+998 (99) 857 32 16</a>
+        <img class="navbar__icon" src="/phone.svg" alt="phone icon" />
+        <a href="tel:+998998573216" class="text-caption amber--text"
+          >+998 (99) 857 32 16</a
+        >
         <v-menu v-model="languageMenu" offset-y>
           <template v-slot:activator="{ on, attrs }">
-            <v-btn class="text-capitalize white--text ml-5" v-bind="attrs" v-on="on" text>
-              {{ activeLang }}
+            <v-btn
+              class="text-capitalize white--text ml-5"
+              v-bind="attrs"
+              v-on="on"
+              text
+            >
+              {{ $t("lang") }}
               <v-icon small right>mdi-menu-down</v-icon>
             </v-btn>
           </template>
           <v-list dense>
-            <v-list-item v-for="(lang, index) in langs" :key="index" @click="handleMenuItemClick(lang)">
-              <v-list-item-title class="d-flex align-center"><img :src="lang.icon" alt="flag" class="flag mr-2"> {{ lang.title }}</v-list-item-title>
+            <v-list-item
+              v-for="(lang, index) in langs"
+              :key="index"
+              @click="handleMenuItemClick(lang)"
+            >
+              <nuxt-link
+                class="black--text lang-links"
+                :to="switchLocalePath(lang.code)"
+              >
+                <v-list-item-title class="d-flex align-center">
+                  <img :src="lang.icon" alt="flag" class="flag mr-2" />
+                  {{ lang.title }}
+                </v-list-item-title>
+              </nuxt-link>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -51,11 +84,11 @@ export default {
   data() {
     return {
       langs: [
-        { title: 'Eng', icon: '/us.svg' },
-        { title: 'Uz', icon: '/uz.svg' },
-        { title: 'Ru', icon: '/ru.svg'}
+        { title: "Eng", code: "en", icon: "/us.svg" },
+        { title: "Uz", code: "uz", icon: "/uz.svg" },
+        { title: "Ru", code: "ru", icon: "/ru.svg" },
       ],
-      activeLang: 'Ru',
+      activeLang: "Ru",
       dialog: false,
       languageMenu: false,
       menuIsActive: false,
@@ -63,11 +96,12 @@ export default {
     };
   },
   methods: {
-    handleMenuItemClick (lang) {
+    handleMenuItemClick(lang) {
+      console.log(lang);
       this.activeLang = lang.title;
     },
-    handleAddLanguage () {
-      alert('handle add new language!');
+    handleAddLanguage() {
+      alert("handle add new language!");
     },
     menuEventButton() {
       this.menuIsActive = !this.menuIsActive;
@@ -79,13 +113,16 @@ export default {
 <style lang="scss">
 @media (max-width: 414px) {
   .v-application .text-caption {
-    font-size: 0.60rem !important;
+    font-size: 0.6rem !important;
     line-height: 1rem !important;
     vertical-align: middle;
   }
 }
 .flag {
   width: 25px;
+}
+.lang-links {
+  text-decoration: none;
 }
 .links {
   display: flex;
@@ -102,9 +139,8 @@ export default {
       text-decoration: none;
       font-weight: 500;
       font-size: 12px;
-      color: #FECA2E;
+      color: #feca2e;
       margin-left: 10px;
-
     }
   }
 }
@@ -125,7 +161,7 @@ nav {
   left: 0;
   height: 70px;
   width: 100vw;
-  background: #101A33;
+  background: #101a33;
   z-index: 100000;
 }
 
@@ -140,7 +176,7 @@ nav .navbar {
 }
 
 .logoContainer {
-  margin-top: 10px;
+  margin-top: 15px;
   list-style: none;
   display: flex;
   align-items: flex-start;
@@ -152,6 +188,8 @@ nav .navbar {
 }
 
 .logoContainer li .logoImg {
+  width: 60px;
+  height: 60px;
   display: inline-block;
   vertical-align: middle;
   line-height: 70px;
@@ -169,7 +207,7 @@ nav .navbar .logo {
 }
 
 nav .navbar .logo:hover {
-  color: #F7CA2F;
+  color: #f7ca2f;
 }
 
 nav .navbar .nav-links {
@@ -204,14 +242,14 @@ nav .navbar .nav-links .links li a {
 }
 
 nav .navbar .nav-links .links li:hover a {
-  color: #F7CA2F;
+  color: #f7ca2f;
 }
 nav .navbar .nav-links .links li a:after {
-  content: '';
+  content: "";
   width: 0;
   display: block;
   height: 2px;
-  background: #F7CA2F;
+  background: #f7ca2f;
   transition: all 0.4s ease;
 }
 
@@ -342,7 +380,8 @@ nav .navbar .nav-links .sidebar-logo .bx-x {
     margin-top: 15px;
   }
 }
-.v-application ul, .v-application ol {
+.v-application ul,
+.v-application ol {
   padding-left: 0 !important;
 }
 </style>

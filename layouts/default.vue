@@ -3,7 +3,7 @@
     <v-main>
       <Navbar />
       <Nuxt />
-      <Footer/>
+      <Footer />
     </v-main>
   </v-app>
 </template>
@@ -15,3 +15,9 @@ export default {
   methods: {},
 };
 </script>
+<style>
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+</style>

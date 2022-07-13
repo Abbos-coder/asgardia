@@ -1,155 +1,204 @@
 <template>
   <div class="mt-16">
-
-   <section class="header" id="header">
-    <div class="container">
-    <v-row>
-      <v-col>
-        <div>
-          <div class="header__body">
-            <div class="header__title">asgardia <sup>tm</sup></div>
-            <div class="header__subtitle">надёжное программное обеспечение </div>
-            <div class="d-flex justify-center justify-lg-start">
-              <v-btn color="amber" class="header__btn" outlined rounded>обсудить проект</v-btn>
-            </div>
-          </div>
-        </div>
-      </v-col>
-      <v-spacer class="spacer-sm"/>
-      <v-col>
-        <div class="header__info">
-          <div class="d-flex align-center">
-            <img src="~/assets/images/brilliant.svg" alt="icon">
-            <p>Высокое качество и доступность IT решений</p>
-          </div>
-          <div class="d-flex align-center">
-            <img src="~/assets/images/bag.svg" alt="icon">
-            <p>Большой опыт и знания передовых технологий </p>
-          </div>
-          <div class="d-flex align-center">
-            <img src="~/assets/images/persons.svg" alt="icon">
-            <p>Открытость и искренность в общении с клиентами</p>
-          </div>
-        </div>
-      </v-col>
-    </v-row>
-      <div class="d-flex justify-center">
-        <div class="mouse"></div>
-      </div>
-      </div>
-  </section >
-
-   <div class="grey darken-3">
-        <v-row class="about">
-          <v-col class="white block-left" cols="12" lg="6">
-            <div class="about__logo-left">
-              <img src="~/assets/images/logo-left.svg" alt="logo icon">
-            </div>
-            <div class="about__mission">
-              <div class="about__mission-title d-flex align-center">
-                <img src="~/assets/images/rocket.svg" alt="about icon">
-                <p>Миссия Компании</p>
-              </div>
-              <div class="about__mission-item d-flex align-start">
-                <v-icon color="amber">mdi-star</v-icon>
-                <p>
-                  Обеспечить высокое качество и доступность IT решений в различных сферах бизнеса для наших клиентов
-                </p>
-              </div>
-              <div class="about__mission-item d-flex align-start">
-                <v-icon color="amber">mdi-star</v-icon>
-                <p>
-                  Создать команду, где нет сильной вертикальной управленческой иерархии, а работа строится на взаимном уважении, независимо от опыта и должностей членов команды, на взаимопомощи и ответственности друг перед другом и нашими клиентами
-                </p>
+    <section class="header" id="main">
+      <div class="container">
+        <v-row>
+          <v-col>
+            <div>
+              <div class="header__body">
+                <div class="header__title">asgardia <sup>tm</sup></div>
+                <div class="header__subtitle">
+                  {{ $t("header.title") }}
+                </div>
+                <div class="d-flex justify-center justify-lg-start">
+                  <v-btn color="amber" class="header__btn" outlined rounded>
+                    {{ $t("header.btn") }}
+                  </v-btn>
+                </div>
               </div>
             </div>
           </v-col>
-          <v-col class="grey darken-4 block-right" cols="12" lg="6" id="secure">
-            <div class="about__logo-right">
-              <img src="~/assets/images/logo-right.svg" alt="logo icon">
-            </div>
-            <div class="about__secure">
-              <div class="about__secure-title d-flex align-center">
-                <img src="~/assets/images/secure.svg" alt="about icon">
-                <p>Преимущества Компании</p>
+          <v-spacer class="spacer-sm" />
+          <v-col>
+            <div class="header__info">
+              <div class="d-flex align-center">
+                <img src="~/assets/images/brilliant.svg" alt="icon" />
+                <p>{{ $t("header.col_1") }}</p>
               </div>
-              <div class="about__mission-item d-flex align-start">
-                <v-icon color="amber">mdi-star</v-icon>
-                <p>
-                  Долгосрочное взаимовыгодное сотрудничество
-                </p>
+              <div class="d-flex align-center">
+                <img src="~/assets/images/bag.svg" alt="icon" />
+                <p>{{ $t("header.col_2") }}</p>
               </div>
-              <div class="about__mission-item d-flex align-start">
-                <v-icon color="amber">mdi-star</v-icon>
-                <p>
-                  Обеспечиваем продуманные, надежные и современные решения бизнес-задач
-                </p>
-              </div>
-              <div class="about__mission-item d-flex align-start">
-                <v-icon color="amber">mdi-star</v-icon>
-                <p>
-                  Реализуем нестандартные специализированные решения для наших клиентов
-                </p>
-              </div>
-              <div class="about__mission-item d-flex align-start">
-                <v-icon color="amber">mdi-star</v-icon>
-                <p>
-                  Мы являемся резидентами IT CYBER PARK Uzbekistan
-                </p>
+              <div class="d-flex align-center">
+                <img src="~/assets/images/persons.svg" alt="icon" />
+                <p>{{ $t("header.col_3") }}</p>
               </div>
             </div>
           </v-col>
         </v-row>
+        <div class="d-flex justify-center mouse-scroll">
+          <div class="mouse"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grey darken-3" id="about">
+      <v-row class="about">
+        <v-col class="white block-left" cols="12" lg="6">
+          <div class="about__logo-left">
+            <img src="~/assets/images/logo-left.svg" alt="logo icon" />
+          </div>
+          <div class="about__mission">
+            <div class="about__mission-title d-flex align-center">
+              <img src="~/assets/images/rocket.svg" alt="about icon" />
+              <p data-aos="fade-up">{{ $t("about.mission") }}</p>
+            </div>
+            <div
+              class="about__mission-item d-flex align-start"
+              data-aos="fade-right"
+            >
+              <v-icon color="amber">mdi-star</v-icon>
+              <p>
+                {{ $t("about.mission_item_1") }}
+              </p>
+            </div>
+            <div
+              class="about__mission-item d-flex align-start"
+              data-aos="fade-right"
+            >
+              <v-icon color="amber">mdi-star</v-icon>
+              <p>
+                {{ $t("about.mission_item_2") }}
+              </p>
+            </div>
+          </div>
+        </v-col>
+        <v-col class="grey darken-4 block-right" cols="12" lg="6" id="secure">
+          <div class="about__logo-right">
+            <img src="~/assets/images/logo-right.svg" alt="logo icon" />
+          </div>
+          <div class="about__secure">
+            <div class="about__secure-title d-flex align-center">
+              <img src="~/assets/images/secure.svg" alt="about icon" />
+              <p data-aos="fade-up">{{ $t("about.secure") }}</p>
+            </div>
+            <div
+              class="about__mission-item d-flex align-start"
+              data-aos="fade-left"
+            >
+              <v-icon color="amber">mdi-star</v-icon>
+              <p>{{ $t("about.secure_item_1") }}</p>
+            </div>
+            <div
+              class="about__mission-item d-flex align-start"
+              data-aos="fade-left"
+            >
+              <v-icon color="amber">mdi-star</v-icon>
+              <p>
+                {{ $t("about.secure_item_2") }}
+              </p>
+            </div>
+            <div
+              class="about__mission-item d-flex align-start"
+              data-aos="fade-left"
+            >
+              <v-icon color="amber">mdi-star</v-icon>
+              <p>
+                {{ $t("about.secure_item_3") }}
+              </p>
+            </div>
+            <div
+              class="about__mission-item d-flex align-start"
+              data-aos="fade-left"
+            >
+              <v-icon color="amber">mdi-star</v-icon>
+              <p>{{ $t("about.secure_item_4") }}</p>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
     </div>
 
-   <div class="portfolio">
-     <div class="portfolio__title">Наши стартапы</div>
-     <Carousel/>
-   </div>
-    <div class="info-cards">
-      <div class="info-cards__title text-center">Чем мы занимаемся</div>
+    <div class="portfolio" id="portfolio">
+      <div class="portfolio__title" data-aos="fade-up">
+        {{ $t("portfolio.title") }}
+      </div>
+      <Carousel data-aos="zoom-in" />
+    </div>
+    <div class="info-cards" id="services">
+      <div class="info-cards__title text-center" data-aos="fade-up">
+        {{ $t("what_we.title") }}
+      </div>
       <div class="info-cards__body d-flex justify-center container">
-        <div class="info-cards__item">
-          <div class="item-cards__icon"><img src="~/assets/images/info-1.svg" alt="icon"></div>
-          <div class="info-cards__text">Разработка приложений для крупного, среднего и малого бизнеса. </div>
+        <div class="info-cards__item" data-aos="flip-up">
+          <div class="item-cards__icon">
+            <img src="~/assets/images/info-1.svg" alt="icon" />
+          </div>
+          <div class="info-cards__text">
+            {{ $t("what_we.card_1") }}
+          </div>
         </div>
-        <div class="info-cards__item">
-          <div class="item-cards__icon"><img src="~/assets/images/info-2.svg" alt="icon"></div>
-          <div class="info-cards__text">Разработка мобильных приложений. </div>
+        <div
+          class="info-cards__item"
+          data-aos="flip-up"
+          data-aos-duration="1500"
+        >
+          <div class="item-cards__icon">
+            <img src="~/assets/images/info-2.svg" alt="icon" />
+          </div>
+          <div class="info-cards__text">{{ $t("what_we.card_2") }}</div>
         </div>
-        <div class="info-cards__item">
-          <div class="item-cards__icon"><img src="~/assets/images/info-3.svg" alt="icon"></div>
-          <div class="info-cards__text">Тех. экспертиза, консультации и тех. поддержка. </div>
+        <div
+          class="info-cards__item"
+          data-aos="flip-up"
+          data-aos-duration="2000"
+        >
+          <div class="item-cards__icon">
+            <img src="~/assets/images/info-3.svg" alt="icon" />
+          </div>
+          <div class="info-cards__text">
+            {{ $t("what_we.card_3") }}
+          </div>
         </div>
-        <div class="info-cards__item">
-          <div class="item-cards__icon"><img src="~/assets/images/info-4.svg" alt="icon"></div>
-          <div class="info-cards__text">Аутсорсинг и аутстаффинг. </div>
+        <div
+          class="info-cards__item"
+          data-aos="flip-up"
+          data-aos-duration="2500"
+        >
+          <div class="item-cards__icon">
+            <img src="~/assets/images/info-4.svg" alt="icon" />
+          </div>
+          <div class="info-cards__text">{{ $t("what_we.card_4") }}</div>
         </div>
       </div>
     </div>
-    <div class="prices">
-      <div class="prices__title text-center">стоимость и оценка разработки</div>
+    <div id="contact"></div>
+    <div class="prices" id="price">
+      <div class="prices__title text-center" data-aos="fade-up">
+        {{ $t("price.title") }}
+      </div>
       <div class="prices__body container">
-        <div class="prices__middle text-center">Средняя стоимость часа разработки - <span>$30</span> </div>
-        <p class="text-center contact__title">Вы готовы обсудить проект?</p>
+        <div class="prices__middle text-center">
+          {{ $t("price.subtitle") }} - <span>$30</span>
+        </div>
+        <p class="text-center contact__title">
+          {{ $t("contact.title") }}
+        </p>
         <v-row justify="center" class="mb-9">
           <v-col cols="12" sm="12" lg="4">
-            <p>Заполните форму и мы свяжемся с Вами
-              в ближайшее время, чтобы обсудить проект:
+            <p>
+              {{ $t("contact.text") }}
             </p>
           </v-col>
           <v-col cols="12" sm="12" lg="3">
             <div class="name">
-              <v-text-field
-                label="Ваше имя"
-                dark
-              />
+              <v-text-field :label="$t('contact.name')" dark />
             </div>
           </v-col>
           <v-col cols="12" sm="12" lg="3">
             <div class="lastname name">
               <v-text-field
-                label="Ваш телефон"
+                :label="$t('contact.phone')"
                 type="number"
                 hide-spin-buttons
                 dark
@@ -158,15 +207,14 @@
           </v-col>
         </v-row>
         <div class="d-flex justify-center">
-          <v-btn outlined rounded color="amber">Оценить проект</v-btn>
+          <v-btn outlined rounded color="amber">{{ $t("contact.btn") }}</v-btn>
         </div>
       </div>
     </div>
     <div class="go-up" @click="goTop">
       <v-icon color="white" size="45">mdi-chevron-up</v-icon>
     </div>
-   </div>
-
+  </div>
 </template>
 
 <script>
@@ -174,43 +222,42 @@ export default {
   scrollToTop: true,
   name: "IndexPage",
   data: () => ({
-    carousel: null
+    carousel: null,
   }),
-  created() {
-  },
+  created() {},
   methods: {
     goTop() {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
-      })
-    }
+        behavior: "smooth",
+      });
+    },
   },
   mounted() {
-    VANTA.RINGS({
-      el: "#secure",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      backgroundColor: 0x000e2d,
-    });
-    VANTA.NET({
-      el: "#header",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x3fff60,
-      backgroundColor: 0x000e2d
-    })
-    const go_up = document.querySelector('.go-up')
+    // VANTA.RINGS({
+    //   el: "#secure",
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.0,
+    //   minWidth: 200.0,
+    //   scale: 1.0,
+    //   scaleMobile: 1.0,
+    //   backgroundColor: 0x000e2d,
+    // });
+    // VANTA.NET({
+    //   el: ".header",
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.0,
+    //   minWidth: 200.0,
+    //   scale: 1.0,
+    //   scaleMobile: 1.0,
+    //   color: 0x3fff60,
+    //   backgroundColor: 0x000e2d,
+    // });
+    const go_up = document.querySelector(".go-up");
     window.onscroll = () => {
       if (window.scrollY > 450) {
         go_up.classList.remove("hide");
@@ -218,9 +265,7 @@ export default {
         go_up.classList.add("hide");
       }
     };
-  }
-
-
+  },
 };
 </script>
 
@@ -228,5 +273,4 @@ export default {
 .theme--light {
   background: transparent !important;
 }
-
 </style>
