@@ -1,7 +1,7 @@
 import colors from "vuetify/es5/util/colors";
 
 export default {
-  target: 'static',
+  target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Asgardia Team",
@@ -22,10 +22,19 @@ export default {
       },
     ],
     script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js', body: true},
-      { src: 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js', body: true},
-      { src: 'https://cdn.jsdelivr.net/npm/vanta@0.5.22/dist/vanta.net.min.js', body: true},
-      { src: 'https://code.jquery.com/jquery-3.6.0.min.js'},
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js",
+        body: true,
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js",
+        body: true,
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/vanta@0.5.22/dist/vanta.net.min.js",
+        body: true,
+      },
+      { src: "https://code.jquery.com/jquery-3.6.0.min.js" },
       {
         src: "https://kit.fontawesome.com/215ced7b1f.js",
         crossorigin: "anonymous",
@@ -37,9 +46,7 @@ export default {
   css: ["~/assets/fonts/global.css", "~/assets/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    "~/plugins/swiper.client.js",
-  ],
+  plugins: ["~/plugins/swiper.client.js", "~/plugins/aos.client.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -54,7 +61,37 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    "@nuxtjs/i18n",
   ],
+  i18n: {
+    useCookie: true,
+    alwaysRedirect: true,
+    locales: [
+      {
+        code: "ru",
+        iso: "ru-RU",
+        name: "Russian",
+        file: "ru/index.js",
+      },
+      {
+        code: "uz",
+        iso: "uz-UZ",
+        name: "O'zbek",
+        file: "uz/index.js",
+      },
+      {
+        code: "en",
+        iso: "en-US",
+        name: "English",
+        file: "en/index.js",
+      },
+    ],
+    lazy: true,
+    seo: false,
+    langDir: "locales/",
+    defaultLocale: "ru",
+    parsePages: false,
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
