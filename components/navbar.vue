@@ -107,6 +107,19 @@ export default {
       this.menuIsActive = !this.menuIsActive;
     },
   },
+  mounted() {
+    const nav = document.querySelector("nav");
+    const go_up = document.querySelector(".go-up");
+    window.onscroll = () => {
+      if (window.scrollY > 150) {
+        nav.classList.add('nav_color');
+        go_up.classList.remove("hide");
+      } else  {
+        nav.classList.remove('nav_color');
+        go_up.classList.add("hide");
+      }
+    };
+  }
 };
 </script>
 
@@ -161,13 +174,17 @@ nav {
   left: 0;
   height: 70px;
   width: 100vw;
-  background: #101a33;
   z-index: 100000;
+  transition: all ease-in-out .2s;
+
+  &.nav_color {
+    background: #000;
+    //background: #101a33;
+  }
 }
 
 nav .navbar {
   height: 100%;
-  min-width: 100%;
   margin: auto;
   display: flex;
   align-items: center;

@@ -1,6 +1,7 @@
 <template>
   <div class="mt-16">
     <section class="header" id="main">
+
       <div class="container">
         <v-row>
           <v-col>
@@ -40,6 +41,8 @@
           <div class="mouse"></div>
         </div>
       </div>
+      <video src="~/assets/video/bg-video-2.mp4" autoplay muted loop></video>
+
     </section>
 
     <div class="grey darken-3" id="about">
@@ -178,9 +181,9 @@
         {{ $t("price.title") }}
       </div>
       <div class="prices__body container">
-        <div class="prices__middle text-center">
-          {{ $t("price.subtitle") }} - <span>$30</span>
-        </div>
+<!--        <div class="prices__middle text-center">-->
+<!--          {{ $t("price.subtitle") }} - <span>$30</span>-->
+<!--        </div>-->
         <p class="text-center contact__title">
           {{ $t("contact.title") }}
         </p>
@@ -245,26 +248,26 @@ export default {
     //   scaleMobile: 1.0,
     //   backgroundColor: 0x000e2d,
     // });
-    // VANTA.NET({
-    //   el: ".header",
-    //   mouseControls: true,
-    //   touchControls: true,
-    //   gyroControls: false,
-    //   minHeight: 200.0,
-    //   minWidth: 200.0,
-    //   scale: 1.0,
-    //   scaleMobile: 1.0,
-    //   color: 0x3fff60,
-    //   backgroundColor: 0x000e2d,
-    // });
-    const go_up = document.querySelector(".go-up");
-    window.onscroll = () => {
-      if (window.scrollY > 450) {
-        go_up.classList.remove("hide");
-      } else if (window.scrollY < 350) {
-        go_up.classList.add("hide");
-      }
-    };
+     VANTA.NET({
+       el: "#secure",
+       mouseControls: true,
+       touchControls: true,
+       gyroControls: false,
+       minHeight: 200.0,
+       minWidth: 200.0,
+       scale: 1.0,
+       scaleMobile: 1.0,
+       color: 0x3fff60,
+       backgroundColor: 0x000e2d,
+     });
+    // const go_up = document.querySelector(".go-up");
+    // window.onscroll = () => {
+    //   if (window.scrollY > 450) {
+    //     go_up.classList.remove("hide");
+    //   } else if (window.scrollY < 350) {
+    //     go_up.classList.add("hide");
+    //   }
+    // };
   },
 };
 </script>
