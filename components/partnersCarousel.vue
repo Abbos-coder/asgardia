@@ -15,6 +15,11 @@
               <img src="~/assets/images/usoft.svg" alt="partners"/>
             </div>
           </div>
+          <div class="swiper-slide">
+            <div class="slide-images">
+              <img src="~/assets/images/cyber-park.png" alt="partners"/>
+            </div>
+          </div>
         </div>
         <!-- If we need pagination -->
 <!--        <div class="swiper-pagination mb-5"></div>-->
