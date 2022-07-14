@@ -53,4 +53,8 @@ export default {
     btn: "Loyihani baholash",
   },
   logo_text: "Dasturiy ta'minot ishlab chiqaruvchi kompaniya",
+  partners: {
+    title: "Bizning hamkorlarimiz",
+    subtitle: "Ishlash yoqimli"
+  }
 };

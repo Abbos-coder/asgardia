@@ -214,6 +214,15 @@
         </div>
       </div>
     </div>
+
+    <div class="partners">
+      <div class="partners__title text-center text-uppercase">{{$t("partners.title")}}</div>
+      <div class="partners__subtitle text-center text-uppercase">{{$t("partners.subtitle")}}</div>
+      <div class="partners__body">
+        <partnersCarousel/>
+      </div>
+    </div>
+
     <div class="go-up" @click="goTop">
       <v-icon color="white" size="45">mdi-chevron-up</v-icon>
     </div>
