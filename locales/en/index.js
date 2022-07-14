@@ -54,4 +54,8 @@ export default {
     btn: "Rate the project",
   },
   logo_text: "Software development company",
+  partners: {
+    title: "Our partners",
+    subtitle: "Nice to work with"
+  }
 };
