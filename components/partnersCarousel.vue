@@ -22,7 +22,7 @@
           </div>
         </div>
         <!-- If we need pagination -->
-<!--        <div class="swiper-pagination mb-5"></div>-->
+        <!--        <div class="swiper-pagination mb-5"></div>-->
 
         <!-- If we need navigation buttons -->
         <div class="swiper-prev">
@@ -34,7 +34,7 @@
         </div>
 
         <!-- If we need scrollbar -->
-<!--        <div class="swiper-scrollbar"></div>-->
+        <!--        <div class="swiper-scrollbar"></div>-->
       </div>
     </div>
   </div>
@@ -88,11 +88,11 @@ export default {
           slidesPerView: 2.5,
         },
         1366: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 10,
         },
         1920: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 10,
         },
       },
