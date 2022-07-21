@@ -219,7 +219,7 @@
       <div class="partners__title text-center text-uppercase">{{$t("partners.title")}}</div>
       <div class="partners__subtitle text-center text-uppercase">{{$t("partners.subtitle")}}</div>
       <div class="partners__body">
-        <partnersCarousel/>
+        <PartnersCarousel/>
       </div>
     </div>
 
@@ -241,22 +241,12 @@ export default {
     goTop() {
       window.scrollTo({
         top: 0,
+        left: 0,
         behavior: "smooth",
       });
     },
   },
   mounted() {
-    // VANTA.RINGS({
-    //   el: "#secure",
-    //   mouseControls: true,
-    //   touchControls: true,
-    //   gyroControls: false,
-    //   minHeight: 200.0,
-    //   minWidth: 200.0,
-    //   scale: 1.0,
-    //   scaleMobile: 1.0,
-    //   backgroundColor: 0x000e2d,
-    // });
      VANTA.NET({
        el: "#secure",
        mouseControls: true,
@@ -269,14 +259,6 @@ export default {
        color: 0x3fff60,
        backgroundColor: 0x000e2d,
      });
-    // const go_up = document.querySelector(".go-up");
-    // window.onscroll = () => {
-    //   if (window.scrollY > 450) {
-    //     go_up.classList.remove("hide");
-    //   } else if (window.scrollY < 350) {
-    //     go_up.classList.add("hide");
-    //   }
-    // };
   },
 };
 </script>
