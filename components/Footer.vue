@@ -10,7 +10,7 @@
         </v-col>
         <v-col cols="12" sm="12" lg="4">
           <div class="footer__menu">
-            <div class="footer__menu-title">{{ $t("navbar.menu") }}</div>
+<!--            <div class="footer__menu-title">{{ $t("navbar.menu") }}</div>-->
             <div class="footer__menu-item service">
               <a href="#">{{ $t("navbar.services") }}</a>
             </div>
@@ -33,11 +33,11 @@
           </div>
           <div class="footer__menu-item d-flex align-center">
             <img src="/gmail.svg" alt="gmail icon" />
-            <a href="#">rakhmatovruslan@gmail.com</a>
+            <a href="#">rakhmatovruslan@asgardia.team</a>
           </div>
           <div class="footer__menu-item d-flex align-center">
             <img src="/telegram.svg" alt="telegram icon" />
-            <a href="#">@RuslanRakhmatov</a>
+            <a href="https://telegram.me/RuslanRakhmatov">@RuslanRakhmatov</a>
           </div>
         </v-col>
       </v-row>

@@ -38,7 +38,7 @@
       <div class="swiper-button-prev"></div>
 
       <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
+<!--      <div class="swiper-scrollbar"></div>-->
     </div>
   </div>
 </template>
@@ -73,7 +73,6 @@ export default {
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
-        type: "bullets",
       },
       // Responsive breakpoints
       breakpoints: {

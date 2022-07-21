@@ -5,25 +5,22 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <div class="slide-images">
               <img src="~/assets/images/sola-1.svg" alt="partners"/>
             </div>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <div class="slide-images">
               <img src="~/assets/images/usoft.svg" alt="partners"/>
             </div>
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <div class="slide-images">
               <img src="~/assets/images/cyber-park.png" alt="partners"/>
             </div>
           </div>
         </div>
-        <!-- If we need pagination -->
-        <!--        <div class="swiper-pagination mb-5"></div>-->
-
         <!-- If we need navigation buttons -->
         <div class="swiper-prev">
           <img src="~/assets/images/angle-left.svg" alt="arrow">
@@ -41,31 +38,35 @@
 </template>
 
 <script>
-import Swiper, {Navigation, Pagination} from "swiper";
+import Swiper, {Autoplay, Navigation, Pagination} from "swiper";
 import "swiper/swiper-bundle.css";
 
 export default {
   data: () => ({}),
   mounted() {
-    Swiper.use([Navigation, Pagination]);
+    Swiper.use([Navigation, Pagination, Autoplay]);
     const swiper = new Swiper(".partners", {
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Autoplay],
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       slidesPerView: 2,
       direction: "horizontal",
       spaceBetween: 10,
+      loop: true,
       keyboard: {
         enabled: true,
         onlyInViewport: false,
       },
-      loop: true,
+
+      // loop: true,
       // using "ratio" endpoint
       navigation: {
         nextEl: ".swiper-next",
         prevEl: ".swiper-prev",
       },
-      autoplay: {
-        delay: 3000,
-      },
+
 
       // Responsive breakpoints
       breakpoints: {
@@ -102,6 +103,10 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

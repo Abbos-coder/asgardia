@@ -55,7 +55,7 @@
           </template>
           <v-list dense>
             <v-list-item
-              v-for="(lang, index) in langs"
+              v-for="(lang, index) in language"
               :key="index"
               @click="handleMenuItemClick(lang)"
             >
@@ -63,7 +63,7 @@
                 class="black--text lang-links"
                 :to="switchLocalePath(lang.code)"
               >
-                <v-list-item-title class="d-flex align-center">
+                <v-list-item-title class="d-flex align-center active-lang">
                   <img :src="lang.icon" alt="flag" class="flag mr-2" />
                   {{ lang.title }}
                 </v-list-item-title>
@@ -83,25 +83,41 @@
 export default {
   data() {
     return {
-      langs: [
-        { title: "Eng", code: "en", icon: "/us.svg" },
+      language: [
+        { title: "En", code: "en", icon: "/us.svg" },
         { title: "Uz", code: "uz", icon: "/uz.svg" },
-        { title: "Ru", code: "ru", icon: "/ru.svg" },
+        // { title: "Ru", code: "ru", icon: "/ru.svg" },
       ],
-      activeLang: "Ru",
+      activeLang: "",
       dialog: false,
       languageMenu: false,
       menuIsActive: false,
       nav_items: ["Услуги", "О компании", "Портфолио", "Прайс", "Контакты"],
     };
   },
+  watch: {
+    activeLang(val) {
+      if(val == 'En') {
+        this.language = [
+          { title: "Uz", code: "uz", icon: "/uz.svg" },
+          { title: "Ru", code: "ru", icon: "/ru.svg" },
+        ]
+      } else if(val == 'Ru') {
+        this.language = [
+          { title: "En", code: "en", icon: "/us.svg" },
+          { title: "Uz", code: "uz", icon: "/uz.svg" },
+        ]
+      } else if(val == 'Uz') {
+        this.language = [
+          { title: "En", code: "en", icon: "/us.svg" },
+          { title: "Ru", code: "ru", icon: "/ru.svg" },
+        ]
+      }
+    }
+  },
   methods: {
     handleMenuItemClick(lang) {
-      console.log(lang);
       this.activeLang = lang.title;
-    },
-    handleAddLanguage() {
-      alert("handle add new language!");
     },
     menuEventButton() {
       this.menuIsActive = !this.menuIsActive;
@@ -119,6 +135,8 @@ export default {
         go_up.classList.add("hide");
       }
     };
+
+    // console.log(this.$t("lang"))
   }
 };
 </script>

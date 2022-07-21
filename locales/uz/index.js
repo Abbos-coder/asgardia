@@ -20,7 +20,7 @@ export default {
     mission_item_1:
       "Mijozlarimiz uchun turli biznes sohalarida IT-yechimlarning yuqori sifati va mavjudligini ta'minlash",
     mission_item_2:
-      "Kuchli vertikal boshqaruv ierarxiyasi mavjud bo'lmagan va ish jamoa a'zolarining tajribasi va pozitsiyasidan qat'i nazar, o'zaro hurmatga, o'zaro yordam va bir-birimizga va mijozlarimizga mas'uliyatga asoslangan jamoani yarating.",
+      "Kuchli vertikal boshqaruv ierarxiyasi mavjud bo'lmagan va ish jamoa a'zolarining tajribasi va pozitsiyasidan qat'iy nazar, o'zaro hurmatga, o'zaro yordam va bir-birimizga va mijozlarimizga mas'uliyatga asoslangan jamoani yarating.",
 
     secure: "Kompaniyaning afzalliklari",
     secure_item_1: "Uzoq muddatli o'zaro manfaatli hamkorlik",
@@ -38,7 +38,7 @@ export default {
     title: "Biz nima bilan shug'ullanamiz",
     card_1: " Katta, o'rta va kichik biznes uchun ilovalarni ishlab chiqish.",
     card_2: "Mobil ilovalarni ishlab chiqish.",
-    card_3: "Bular - ekspertiza, maslahat va texnik yordam.",
+    card_3: "Texnik ekspertiza, maslahat va texnik yordam.",
     card_4: "Autsorsing va autstaffing.",
   },
   price: {
