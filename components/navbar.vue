@@ -135,8 +135,6 @@ export default {
         go_up.classList.add("hide");
       }
     };
-
-    // console.log(this.$t("lang"))
   }
 };
 </script>
