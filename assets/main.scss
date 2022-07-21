@@ -239,6 +239,7 @@ body,
 
     > .about__mission-item {
       color: #f9f9f9;
+      margin-left: 0;
     }
   }
 
@@ -270,10 +271,17 @@ body,
   }
 
   &__mission-item {
+    @media (max-width: 414px) {
+      margin-left: 10px;
+    }
     margin-bottom: 32px;
     margin-left: 15px;
 
     p {
+      @media (max-width: 414px) {
+        padding-right: 12px;
+        margin-left: 7px;
+      }
       max-width: 390px;
       font-weight: 400;
       font-size: 18px;
@@ -284,6 +292,7 @@ body,
 
 .portfolio {
   width: 100vw;
+  //height: 100vh;
   position: relative;
   padding-top: 95px;
   z-index: 10;
@@ -291,10 +300,12 @@ body,
   color: #ffffff;
 
   &__title {
+    @media (max-width: 414px) {
+      font-size: 28px;
+    }
     font-weight: 500;
     font-size: 40px;
     line-height: 120%;
-    //margin-bottom: 64px;
     text-align: center;
     text-transform: uppercase;
     color: #ffffff;
@@ -310,6 +321,9 @@ body,
 }
 
 .swiper {
+  @media (max-width: 1440px) {
+    width: auto;
+  }
   overflow: hidden;
   width: 1320px;
   min-height: 614px;
@@ -333,6 +347,9 @@ body,
   background: #f9f9f9;
 
   &__title {
+    @media (max-width: 414px) {
+      font-size: 28px;
+    }
     font-weight: 500;
     font-size: 40px;
     line-height: 120%;
@@ -378,6 +395,9 @@ body,
   color: #ffffff;
 
   &__title {
+    @media (max-width: 414px) {
+      font-size: 28px;
+    }
     font-weight: 500;
     font-size: 40px;
     line-height: 120%;
@@ -463,6 +483,9 @@ body,
 
   &__menu-item {
     > a {
+      @media (max-width: 414px) {
+        font-size: 12px;
+      }
       text-decoration: none;
       color: #ffffff !important;
       margin-left: 15px;
@@ -513,7 +536,7 @@ body,
   @media (max-width: 600px) {
     display: none !important;
   }
-  right: 240px !important;
+  right: 150px !important;
   color: #ffffff !important;
 }
 
@@ -580,6 +603,9 @@ body,
   }
 
   &__title {
+    @media (max-width: 414px) {
+      font-size: 28px;
+    }
     text-transform: uppercase;
     color: #010D2B;
     font-weight: 500;
@@ -589,6 +615,9 @@ body,
   }
 
   &__subtitle {
+    @media (max-width: 414px) {
+      font-size: 18px;
+    }
     font-weight: 400;
     font-size: 24px;
     line-height: 120%;
@@ -599,7 +628,13 @@ body,
   }
 }
 
+.active-lang {
+  display: none !important;
+}
 .swiper-slide {
+  @media (max-width: 1440px) {
+    justify-content: flex-start;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

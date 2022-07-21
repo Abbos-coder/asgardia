@@ -1,5 +1,5 @@
 export default {
-  lang: "Eng",
+  lang: "En",
   navbar: {
     services: "Services",
     about: "About",
