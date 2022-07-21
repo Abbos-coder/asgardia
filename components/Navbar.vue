@@ -13,7 +13,7 @@
       <div class="nav-links" :class="{ opened: menuIsActive }">
         <div class="sidebar-logo">
           <img src="/logo-only.svg" alt="logo" />
-          <div class="white--text text-h6 ml-4 mobile-logo">Asgardia</div>
+          <nuxt-link to="#main" class="white--text text-h6 ml-4 mobile-logo">Asgardia</nuxt-link>
           <v-spacer />
           <i class="bx bx-x" @click="menuEventButton"></i>
         </div>
@@ -135,6 +135,22 @@ export default {
         go_up.classList.add("hide");
       }
     };
+    const links = document.querySelectorAll('.links > li');
+    const logo = document.querySelector('.mobile-logo');
+    const nav_link = document.querySelector('.nav-links');
+    window.addEventListener('click', (e) => {
+      if(e.pointerId == 82) {
+        this.menuIsActive = !this.menuIsActive;
+      }
+    })
+    logo.addEventListener('click', () => {
+      this.menuIsActive = !this.menuIsActive;
+    })
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        this.menuIsActive = !this.menuIsActive;
+      })
+    })
   }
 };
 </script>
@@ -188,10 +204,11 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 70px;
+  height: 80px;
   width: 100vw;
   z-index: 100000;
   transition: all ease-in-out .2s;
+  padding: 10px 0;
 
   &.nav_color {
     background: #000;
@@ -212,12 +229,12 @@ nav .navbar {
   margin-top: 15px;
   list-style: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 .logoContainer li {
   display: inline-block;
   position: inherit;
-  line-height: 70px;
+  //line-height: 70px;
 }
 
 .logoContainer li .logoImg {
@@ -225,7 +242,6 @@ nav .navbar {
   height: 60px;
   display: inline-block;
   vertical-align: middle;
-  line-height: 70px;
   transform: translateY(-10%);
 }
 
