@@ -359,6 +359,7 @@ body,
   }
 
   &__item {
+    min-height: 249px;
     width: 315px;
     padding: 32px 28px;
     background: #111b34;
@@ -678,4 +679,6 @@ body,
   }
 }
 
-
+.v-menu__content--fixed, .log {
+  z-index: 100000 !important;
+}
