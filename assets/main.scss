@@ -396,8 +396,8 @@ body,
   color: #ffffff;
 
   &__title {
-    @media (max-width: 414px) {
-      font-size: 28px;
+    @media (max-width: 450px) {
+      font-size: 22px;
     }
     font-weight: 500;
     font-size: 40px;
@@ -406,9 +406,7 @@ body,
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 64px;
-    @media (max-width: 450px) {
-      font-size: 28px;
-    }
+
   }
 
   &__middle {
@@ -548,6 +546,10 @@ body,
 }
 
 .go-up {
+  @media (max-width: 450px) {
+    bottom: 40px;
+    right: 40px;
+  }
   position: fixed;
   bottom: 80px;
   right: 50px;
@@ -681,4 +683,7 @@ body,
 
 .v-menu__content--fixed, .log {
   z-index: 100000 !important;
+}
+.mobile-logo {
+  text-decoration: none;
 }
