@@ -33,11 +33,11 @@
           </div>
           <div class="footer__menu-item d-flex align-center">
             <img src="/gmail.svg" alt="gmail icon" />
-            <a href="#">rakhmatovruslan@asgardia.team</a>
+            <a href="#" class="text-lowercase">rakhmatovruslan@asgardia.team</a>
           </div>
           <div class="footer__menu-item d-flex align-center">
             <img src="/telegram.svg" alt="telegram icon" />
-            <a href="https://telegram.me/RuslanRakhmatov">@RuslanRakhmatov</a>
+            <a href="https://telegram.me/RuslanRakhmatov" class="text-lowercase">@RuslanRakhmatov</a>
           </div>
         </v-col>
       </v-row>

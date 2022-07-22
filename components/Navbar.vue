@@ -38,9 +38,7 @@
       <v-spacer />
       <div class="navbar__controls d-flex">
         <img class="navbar__icon" src="/phone.svg" alt="phone icon" />
-        <a href="tel:+998998573216" class="text-caption amber--text"
-          >+998 (99) 857 32 16</a
-        >
+        <a href="tel:+998998573216" class=" amber--text">+998 (99) 857 32 16</a>
         <v-menu v-model="languageMenu" offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
@@ -183,7 +181,7 @@ export default {
     a {
       text-decoration: none;
       font-weight: 500;
-      font-size: 12px;
+      font-size: 16px;
       color: #feca2e;
       margin-left: 10px;
     }

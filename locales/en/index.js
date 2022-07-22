@@ -40,7 +40,9 @@ export default {
       " Development of applications for large, medium and small businesses.",
     card_2: "Development of mobile applications.",
     card_3: "Those. expertise, advice and technical support.",
-    card_4: "Outsourcing and outstaffing.",
+    card_4_1: "Outsourcing.",
+    card_4_2: "and",
+    card_4_3: "outstaffing.",
   },
   price: {
     title: "development cost and estimate",
