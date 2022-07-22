@@ -39,7 +39,9 @@ export default {
     card_1: " Katta, o'rta va kichik biznes uchun ilovalarni ishlab chiqish.",
     card_2: "Mobil ilovalarni ishlab chiqish.",
     card_3: "Texnik ekspertiza, maslahat va texnik yordam.",
-    card_4: "Autsorsing va autstaffing.",
+    card_4_1: "Autsorsing.",
+    card_4_2: "va",
+    card_4_3: "autstaffing.",
   },
   price: {
     title: "ishlab chiqish qiymati va bahosi",

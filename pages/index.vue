@@ -171,7 +171,9 @@
           <div class="item-cards__icon">
             <img src="~/assets/images/info-4.svg" alt="icon" />
           </div>
-          <div class="info-cards__text">{{ $t("what_we.card_4") }}</div>
+          <div class="info-cards__text">{{ $t("what_we.card_4_1") }}</div>
+          <div class="info-cards__text">{{ $t("what_we.card_4_2") }}</div>
+          <div class="info-cards__text">{{ $t("what_we.card_4_3") }}</div>
         </div>
       </div>
     </div>
