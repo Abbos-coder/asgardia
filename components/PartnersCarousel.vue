@@ -59,9 +59,6 @@ export default {
         enabled: true,
         onlyInViewport: false,
       },
-
-      // loop: true,
-      // using "ratio" endpoint
       navigation: {
         nextEl: ".swiper-next",
         prevEl: ".swiper-prev",
@@ -94,7 +91,7 @@ export default {
         },
         1920: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
       },
     });
@@ -109,4 +106,8 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.swiper {
+  width: 1250px;
+}
+
 </style>

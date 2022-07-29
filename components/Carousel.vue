@@ -7,24 +7,22 @@
         <!-- Slides -->
         <div class="swiper-slide">
           <div class="slide-image">
-            <img src="~/assets/images/portfolio1.jpg" alt="portfolio"/>
+            <img src="~/assets/images/portfolio-1.png" alt="portfolio"/>
             <p>Система управления и трансляции медиа контента “SmartCast”</p>
             <div class="d-flex justify-center justify-lg-start">
-              <v-btn outlined rounded color="amber" class="mt-4">{{
-                  $t("portfolio.btn")
-                }}
+              <v-btn to="/portfolio/dispachme" outlined rounded color="amber" class="mt-4">
+                {{ $t("portfolio.btn") }}
               </v-btn>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="slide-image">
-            <img src="~/assets/images/portfolio2.jpg" alt="portfolio"/>
+            <img src="~/assets/images/portfolio-2.png" alt="portfolio"/>
             <p>Система управления и трансляции медиа контента “SmartCast”</p>
             <div class="d-flex justify-center justify-lg-start">
-              <v-btn outlined rounded color="amber" class="mt-4">{{
-                  $t("portfolio.btn")
-                }}
+              <v-btn to="/portfolio/smartcast" outlined rounded color="amber" class="mt-4">
+                {{ $t("portfolio.btn") }}
               </v-btn>
             </div>
           </div>
@@ -96,11 +94,11 @@ export default {
         },
         1366: {
           slidesPerView: 2,
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
         1920: {
           slidesPerView: 2,
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
       },
     });
