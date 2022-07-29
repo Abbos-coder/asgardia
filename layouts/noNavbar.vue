@@ -1,17 +1,17 @@
 <template>
   <v-app dark>
-      <Navbar />
-      <Nuxt />
+    <Nav />
+    <Nuxt />
     <div class="go-up" @click="goTop">
       <v-icon color="white" size="45">mdi-chevron-up</v-icon>
     </div>
-      <Footer />
+    <Footer />
   </v-app>
 </template>
 
 <script>
 export default {
-  name: "DefaultLayout",
+  name: "noNavbar",
   data: () => ({}),
   methods: {
     goTop() {

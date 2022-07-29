@@ -17,23 +17,23 @@
           <v-spacer />
           <i class="bx bx-x" @click="menuEventButton"></i>
         </div>
-        <ul class="links">
-          <li>
-            <a href="#services">{{ $t("navbar.services") }}</a>
-          </li>
-          <li>
-            <a href="#about">{{ $t("navbar.about") }}</a>
-          </li>
-          <li>
-            <a href="#portfolio">{{ $t("navbar.portfolio") }}</a>
-          </li>
-          <li>
-            <a href="#price">{{ $t("navbar.price") }}</a>
-          </li>
-          <li>
-            <a href="#contact">{{ $t("navbar.contact") }}</a>
-          </li>
-        </ul>
+<!--        <ul class="links">-->
+<!--          <li>-->
+<!--            <a href="#services">{{ $t("navbar.services") }}</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#about">{{ $t("navbar.about") }}</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#portfolio">{{ $t("navbar.portfolio") }}</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#price">{{ $t("navbar.price") }}</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#contact">{{ $t("navbar.contact") }}</a>-->
+<!--          </li>-->
+<!--        </ul>-->
       </div>
       <v-spacer />
       <div class="navbar__controls d-flex">
@@ -79,6 +79,7 @@
 
 <script>
 export default {
+  name: 'Nav',
   data() {
     return {
       language: [

@@ -1,9 +1,8 @@
 <template>
-  <div class="mt-16">
+  <div>
     <section class="header" id="main">
-
       <div class="container">
-        <v-row>
+        <v-row class="bg-header">
           <v-col>
             <div>
               <div class="header__body">
@@ -19,10 +18,9 @@
               </div>
             </div>
           </v-col>
-          <v-spacer class="spacer-sm" />
-          <v-col>
+          <v-col class="d-flex justify-end">
             <div class="header__info">
-              <div class="d-flex align-center">
+              <div class="d-flex align-center ">
                 <img src="~/assets/images/brilliant.svg" alt="icon" />
                 <p>{{ $t("header.col_1") }}</p>
               </div>
@@ -41,8 +39,7 @@
           <div class="mouse"></div>
         </div>
       </div>
-      <video src="~/assets/video/bg-video-2.mp4" autoplay muted loop></video>
-
+<!--      <video src="~/assets/video/bg-video-2.mp4" autoplay muted loop></video>-->
     </section>
 
     <div class="grey darken-3" id="about">
@@ -183,9 +180,6 @@
         {{ $t("price.title") }}
       </div>
       <div class="prices__body container">
-<!--        <div class="prices__middle text-center">-->
-<!--          {{ $t("price.subtitle") }} - <span>$30</span>-->
-<!--        </div>-->
         <p class="text-center contact__title">
           {{ $t("contact.title") }}
         </p>
@@ -225,9 +219,7 @@
       </div>
     </div>
 
-    <div class="go-up" @click="goTop">
-      <v-icon color="white" size="45">mdi-chevron-up</v-icon>
-    </div>
+
   </div>
 </template>
 
@@ -240,33 +232,31 @@ export default {
   }),
   created() {},
   methods: {
-    goTop() {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    },
+
   },
   mounted() {
-     VANTA.NET({
-       el: "#secure",
-       mouseControls: true,
-       touchControls: true,
-       gyroControls: false,
-       minHeight: 200.0,
-       minWidth: 200.0,
-       scale: 1.0,
-       scaleMobile: 1.0,
-       color: 0x3fff60,
-       backgroundColor: 0x000e2d,
-     });
+     // VANTA.NET({
+     //   el: "#secure",
+     //   mouseControls: true,
+     //   touchControls: true,
+     //   gyroControls: false,
+     //   minHeight: 200.0,
+     //   minWidth: 200.0,
+     //   scale: 1.0,
+     //   scaleMobile: 1.0,
+     //   color: 0x3fff60,
+     //   backgroundColor: 0x000e2d,
+     // });
+
+
   },
 };
 </script>
 
 <style lang="scss" scoped>
+
 .theme--light {
   background: transparent !important;
 }
+
 </style>
