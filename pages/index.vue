@@ -11,7 +11,7 @@
                   {{ $t("header.title") }}
                 </div>
                 <div class="d-flex justify-center justify-lg-start">
-                  <v-btn color="amber" class="header__btn" outlined rounded>
+                  <v-btn color="amber" href="#contact" class="header__btn" outlined rounded>
                     {{ $t("header.btn") }}
                   </v-btn>
                 </div>
@@ -44,7 +44,7 @@
 
     <div class="grey darken-3" id="about">
       <v-row class="about">
-        <v-col class="white block-left" cols="12" lg="6">
+        <v-col class="white block-left d-flex flex-column align-center pr-16" cols="12" lg="6">
           <div class="about__logo-left">
             <img src="~/assets/images/logo-left.svg" alt="logo icon" />
           </div>
@@ -73,7 +73,7 @@
             </div>
           </div>
         </v-col>
-        <v-col class="grey darken-4 block-right" cols="12" lg="6" id="secure">
+        <v-col class="grey darken-4 block-right d-flex flex-column align-center" cols="12" lg="6" id="secure">
           <div class="about__logo-right">
             <img src="~/assets/images/logo-right.svg" alt="logo icon" />
           </div>
@@ -125,55 +125,78 @@
       </div>
       <Carousel data-aos="zoom-in" />
     </div>
+
     <div class="info-cards" id="services">
       <div class="info-cards__title text-center" data-aos="fade-up">
         {{ $t("what_we.title") }}
       </div>
-      <div class="info-cards__body d-flex justify-center container">
-        <div class="info-cards__item" data-aos="flip-up">
-          <div class="item-cards__icon">
-            <img src="~/assets/images/info-1.svg" alt="icon" />
-          </div>
-          <div class="info-cards__text">
-            {{ $t("what_we.card_1") }}
-          </div>
-        </div>
-        <div
-          class="info-cards__item"
-          data-aos="flip-up"
-          data-aos-duration="1500"
-        >
-          <div class="item-cards__icon">
-            <img src="~/assets/images/info-2.svg" alt="icon" />
-          </div>
-          <div class="info-cards__text">{{ $t("what_we.card_2") }}</div>
-        </div>
-        <div
-          class="info-cards__item"
-          data-aos="flip-up"
-          data-aos-duration="2000"
-        >
-          <div class="item-cards__icon">
-            <img src="~/assets/images/info-3.svg" alt="icon" />
-          </div>
-          <div class="info-cards__text">
-            {{ $t("what_we.card_3") }}
-          </div>
-        </div>
-        <div
-          class="info-cards__item"
-          data-aos="flip-up"
-          data-aos-duration="2500"
-        >
-          <div class="item-cards__icon">
-            <img src="~/assets/images/info-4.svg" alt="icon" />
-          </div>
-          <div class="info-cards__text">{{ $t("what_we.card_4_1") }}</div>
-          <div class="info-cards__text">{{ $t("what_we.card_4_2") }}</div>
-          <div class="info-cards__text">{{ $t("what_we.card_4_3") }}</div>
-        </div>
+      <div class="info-cards__body container">
+
+        <v-row>
+          <v-col cols="12" lg="3" md="3" sm="6" xs="12">
+            <div
+              class="info-cards__item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div class="item-cards__icon">
+                <img src="~/assets/images/info-1.svg" alt="icon" />
+              </div>
+              <div class="info-cards__text">
+                {{ $t("what_we.card_1") }}
+              </div>
+            </div>
+          </v-col>
+          <v-col cols="12" lg="3" md="3" sm="6" xs="12">
+            <div
+              class="info-cards__item"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+            >
+              <div class="item-cards__icon">
+                <img src="~/assets/images/info-2.svg" alt="icon" />
+              </div>
+              <div class="info-cards__text">{{ $t("what_we.card_2") }}</div>
+            </div>
+          </v-col>
+          <v-col cols="12" lg="3" md="3" sm="6" xs="12">
+            <div
+              class="info-cards__item"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              <div class="item-cards__icon">
+                <img src="~/assets/images/info-3.svg" alt="icon" />
+              </div>
+              <div class="info-cards__text">
+                {{ $t("what_we.card_3") }}
+              </div>
+            </div>
+          </v-col>
+          <v-col cols="12" lg="3" md="3" sm="6" xs="12">
+            <div
+              class="info-cards__item"
+              data-aos="fade-up"
+              data-aos-duration="2500"
+            >
+              <div class="item-cards__icon">
+                <img src="~/assets/images/info-4.svg" alt="icon" />
+              </div>
+              <div class="info-cards__text">{{ $t("what_we.card_4_1") }}</div>
+              <div class="info-cards__text">{{ $t("what_we.card_4_2") }}</div>
+              <div class="info-cards__text">{{ $t("what_we.card_4_3") }}</div>
+            </div>
+          </v-col>
+        </v-row>
+
+
+
       </div>
     </div>
+
+
+
+
     <div id="contact"></div>
     <div class="prices" id="price">
       <div class="prices__title text-center" data-aos="fade-up">
@@ -183,30 +206,55 @@
         <p class="text-center contact__title">
           {{ $t("contact.title") }}
         </p>
+
+
         <v-row justify="center" class="mb-9">
           <v-col cols="12" sm="12" lg="4">
             <p>
               {{ $t("contact.text") }}
             </p>
           </v-col>
-          <v-col cols="12" sm="12" lg="3">
-            <div class="name">
-              <v-text-field :label="$t('contact.name')" dark />
-            </div>
-          </v-col>
-          <v-col cols="12" sm="12" lg="3">
-            <div class="lastname name">
-              <v-text-field
-                :label="$t('contact.phone')"
-                type="number"
-                hide-spin-buttons
-                dark
-              />
-            </div>
+          <v-col>
+            <v-form>
+              <v-row>
+                <v-col cols="12" sm="6" lg="6">
+                  <div class="name">
+                    <v-text-field outlined v-model="request.name" :rules="nameRules" :label="$t('contact.name')" dark />
+                  </div>
+                </v-col>
+                <v-col cols="12" sm="6" lg="6">
+                  <div class="lastname name">
+                    <v-text-field
+                      outlined
+                      v-mask="'#########'"
+                      :label="$t('contact.phone')"
+                      type="text"
+                      dark
+                      prefix="+998"
+                      :rules="phoneRules"
+                      v-model="phone"
+                    />
+                  </div>
+                </v-col>
+                <v-col cols="12" sm="12" lg="12" md="12">
+                  <div class="lastname desc">
+                    <v-text-field
+                      outlined
+                      v-model="request.description"
+                      counter
+                      :rules="desc"
+                      maxlength="300"
+                      :label="$t('contact.description')"
+                      dark
+                    />
+                  </div>
+                </v-col>
+              </v-row>
+            </v-form>
           </v-col>
         </v-row>
         <div class="d-flex justify-center">
-          <v-btn outlined rounded color="amber">{{ $t("contact.btn") }}</v-btn>
+          <v-btn outlined rounded color="amber" @click="sendRequest">{{ $t("contact.btn") }}</v-btn>
         </div>
       </div>
     </div>
@@ -228,11 +276,51 @@ export default {
   scrollToTop: true,
   name: "IndexPage",
   data: () => ({
+    valid: true,
     carousel: null,
+    phone: null,
+    request: {
+      phone: null,
+      name: '',
+      description: '',
+    },
+    desc: [v => v.length <= 300 || 'Max 300 characters'],
+    phoneRules: [
+      // (v) => !!v || "Phone is required",
+      // (v) => (v && v.length <= 14) || "Name must be less than 12 characters",
+    ],
+    nameRules: [
+      // (v) => !!v || "Phone is required",
+    ]
   }),
-  created() {},
+  watch: {
+    phone(val) {
+      this.request.phone = `+998${val}`
+    }
+  },
   methods: {
+    sendRequest() {
+      const config = {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+      const name = this.request.name;
+      const phone = this.request.phone
+      if(!!name && !!phone ) {
+        this.$axios.$post('/api/v1/request', this.request, config).then(req => {
+          if (req) {
+            this.$toast.success('Ваша заявка отправлена', {
+              theme: 'bubble',
+            })
+          }
+          this.request.name = "",
+            this.request.description = "",
+            this.phone = "";
+        })
+      }
 
+    }
   },
   mounted() {
      // VANTA.NET({

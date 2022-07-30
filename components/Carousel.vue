@@ -19,7 +19,7 @@
         <div class="swiper-slide">
           <div class="slide-image">
             <img src="~/assets/images/portfolio-2.png" alt="portfolio"/>
-            <p>Система управления и трансляции медиа контента “SmartCast”</p>
+            <p>Система управления логистикой - DispatchMe</p>
             <div class="d-flex justify-center justify-lg-start">
               <v-btn to="/portfolio/smartcast" outlined rounded color="amber" class="mt-4">
                 {{ $t("portfolio.btn") }}
@@ -29,14 +29,12 @@
         </div>
       </div>
       <!-- If we need pagination -->
-      <div class="swiper-pagination mb-5"></div>
+<!--      <div class="swiper-pagination mb-5"></div>-->
 
       <!-- If we need navigation buttons -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
 
-      <!-- If we need scrollbar -->
-<!--      <div class="swiper-scrollbar"></div>-->
     </div>
   </div>
 </template>

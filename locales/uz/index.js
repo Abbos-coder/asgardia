@@ -10,7 +10,7 @@ export default {
   },
   header: {
     title: "ishonchli dasturiy ta'minot",
-    col_1: "Yuqori sifatli va mavjud IT echimlar",
+    col_1: "Yuqori sifatli IT yechimlar",
     col_2: "Katta tajriba va ilg'or texnologiyalarni bilish",
     col_3: "Mijozlar bilan ishlashda ochiqlik va samimiylik",
     btn: "loyihani muhokama qilish",
@@ -53,6 +53,7 @@ export default {
     name: "Ismingiz",
     phone: "Telefon raqamingiz",
     btn: "Loyihani baholash",
+    description: "Loyiha tavsifi"
   },
   logo_text: "Dasturiy ta'minot ishlab chiqaruvchi kompaniya",
   partners: {

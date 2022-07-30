@@ -39,6 +39,9 @@ html,
 body {
   scroll-behavior: smooth !important;
 }
+.container {
+  max-width: 1440px;
+}
 @media (min-width: 1904px) {
   .container {
     max-width: 1320px;

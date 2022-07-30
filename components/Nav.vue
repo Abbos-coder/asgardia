@@ -62,8 +62,8 @@
                 :to="switchLocalePath(lang.code)"
               >
                 <v-list-item-title class="d-flex align-center active-lang">
-                  <img :src="lang.icon" alt="flag" class="flag mr-2" />
                   {{ lang.title }}
+                  <img :src="lang.icon" alt="flag" class="flag ml-2" />
                 </v-list-item-title>
               </nuxt-link>
             </v-list-item>

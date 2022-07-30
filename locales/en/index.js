@@ -54,6 +54,7 @@ export default {
     name: "Your name",
     phone: "Your phone number",
     btn: "Rate the project",
+    description: "Project description"
   },
   logo_text: "Software development company",
   partners: {

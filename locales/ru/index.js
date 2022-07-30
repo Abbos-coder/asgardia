@@ -53,6 +53,7 @@ export default {
     name: "Ваше имя",
     phone: "Ваш телефон",
     btn: "Оценить проект",
+    description: "Описание проекта"
   },
   logo_text: "Компания-разработчик ПО",
   partners: {
