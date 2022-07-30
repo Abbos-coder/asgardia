@@ -45,7 +45,7 @@ export default {
   data: () => ({}),
   mounted() {
     Swiper.use([Navigation, Pagination, Autoplay]);
-    const swiper = new Swiper(".partners", {
+    new Swiper(".partners", {
       modules: [Navigation, Pagination, Autoplay],
       autoplay: {
         delay: 2500,

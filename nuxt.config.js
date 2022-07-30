@@ -21,6 +21,7 @@ export default {
         rel: "stylesheet",
         href: "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css",
       },
+      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"}
     ],
     script: [
       {
@@ -47,7 +48,11 @@ export default {
   css: ["~/assets/fonts/global.css", "~/assets/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/swiper.client.js", "~/plugins/aos.client.js"],
+  plugins: [
+    { src: "~/plugins/swiper.client.js"},
+    { src: "~/plugins/aos.client.js", mode: "client" },
+    { src: "~/plugins/v-mask.js", mode: "client" },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -63,7 +68,20 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     "@nuxtjs/i18n",
+    "@nuxtjs/toast",
+    [
+      "@openafg/nuxt-fullpage",
+      {
+        // activeSection: 0,
+        // mouseWheelSensitivity: 120,
+        // showIndicators: true
+      }
+    ]
   ],
+  toast: {
+    position: "top-right",
+    duration: 2000,
+  },
   i18n: {
     useCookie: true,
     alwaysRedirect: true,
@@ -97,7 +115,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: "/",
+    baseURL: "https://backend.asgardia.team",
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -122,6 +140,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   server: {
+    host: 0,
     port: 7777,
   },
 };

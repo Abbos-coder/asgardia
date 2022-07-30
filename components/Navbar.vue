@@ -62,8 +62,8 @@
                 :to="switchLocalePath(lang.code)"
               >
                 <v-list-item-title class="d-flex align-center active-lang">
-                  <img :src="lang.icon" alt="flag" class="flag mr-2" />
                   {{ lang.title }}
+                  <img :src="lang.icon" alt="flag" class="flag ml-2" />
                 </v-list-item-title>
               </nuxt-link>
             </v-list-item>
@@ -134,7 +134,6 @@ export default {
     })
     const links = document.querySelectorAll('.links > li');
     const logo = document.querySelector('.mobile-logo');
-    const nav_link = document.querySelector('.nav-links');
     window.addEventListener('click', (e) => {
       if(e.pointerId == 82) {
         this.menuIsActive = !this.menuIsActive;
@@ -206,12 +205,8 @@ nav {
   height: 80px;
   width: 100vw;
   z-index: 100000;
-  transition: all ease-in-out .2s;
+  transition: all ease-in-out .3s;
   padding: 10px 0;
-
-  &.nav_color {
-    background: #000;
-  }
 }
 
 nav .navbar {
@@ -220,7 +215,9 @@ nav .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //padding: 0 50px;
+}
+nav.nav_color {
+  background: #000000;
 }
 
 .logoContainer {
@@ -232,7 +229,6 @@ nav .navbar {
 .logoContainer li {
   display: inline-block;
   position: inherit;
-  //line-height: 70px;
 }
 
 .logoContainer li .logoImg {
@@ -298,11 +294,14 @@ nav .navbar .nav-links .links li a:after {
   height: 2px;
   background: #f7ca2f;
   transition: all 0.4s ease;
+  margin-top: -20px;
+  vertical-align: center;
 }
 
 nav .navbar .nav-links .links li:hover a:after {
   width: 100%;
   transition: all 0.4s ease;
+  margin-top: -20px;
 }
 
 nav .navbar .bx-menu,
@@ -376,7 +375,6 @@ nav .navbar .nav-links .sidebar-logo .bx-x {
 
   nav .navbar .nav-links .sidebar-logo {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
   }
   nav .navbar .bx-menu,
