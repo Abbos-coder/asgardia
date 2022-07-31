@@ -7,10 +7,17 @@
         <!-- Slides -->
         <div class="swiper-slide">
           <div class="slide-image">
-            <img src="~/assets/images/portfolio-1.png" alt="portfolio"/>
+            <img src="~/assets/images/portfolio-1.png" alt="portfolio" />
             <p>Система управления и трансляции медиа контента “SmartCast”</p>
             <div class="d-flex justify-center justify-lg-start">
-              <v-btn to="/portfolio/dispachme" outlined rounded color="amber" class="mt-4">
+              <v-btn
+                href="https://smartcast.uz"
+                target="_blank"
+                outlined
+                rounded
+                color="amber"
+                class="mt-4"
+              >
                 {{ $t("portfolio.btn") }}
               </v-btn>
             </div>
@@ -18,10 +25,17 @@
         </div>
         <div class="swiper-slide">
           <div class="slide-image">
-            <img src="~/assets/images/portfolio-2.png" alt="portfolio"/>
+            <img src="~/assets/images/portfolio-2.png" alt="portfolio" />
             <p>Система управления логистикой - DispatchMe</p>
             <div class="d-flex justify-center justify-lg-start">
-              <v-btn to="/portfolio/smartcast" outlined rounded color="amber" class="mt-4">
+              <v-btn
+                href="https://samfreightllc.net"
+                target="_blank"
+                outlined
+                rounded
+                color="amber"
+                class="mt-4"
+              >
                 {{ $t("portfolio.btn") }}
               </v-btn>
             </div>
@@ -29,18 +43,17 @@
         </div>
       </div>
       <!-- If we need pagination -->
-<!--      <div class="swiper-pagination mb-5"></div>-->
+      <!--      <div class="swiper-pagination mb-5"></div>-->
 
       <!-- If we need navigation buttons -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-
     </div>
   </div>
 </template>
 
 <script>
-import Swiper, {Navigation, Pagination} from "swiper";
+import Swiper, { Navigation, Pagination } from "swiper";
 import "swiper/swiper-bundle.css";
 
 export default {

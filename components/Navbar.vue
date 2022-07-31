@@ -125,6 +125,7 @@ export default {
   },
   mounted() {
     const lang = document.cookie.replace("i18n_redirected=", "");
+    console.log(lang);
     if (lang == "en") {
       this.language = [
         { title: "Uz", code: "uz", icon: "/uz.svg" },

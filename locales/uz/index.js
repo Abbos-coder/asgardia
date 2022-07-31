@@ -28,11 +28,11 @@ export default {
       "Biz biznes muammolariga puxta, ishonchli va zamonaviy yechimlarni taqdim etamiz",
     secure_item_3:
       "Biz mijozlarimiz uchun nostandart ixtisoslashtirilgan yechimlarni amalga oshiramiz",
-    secure_item_4: "“Biz IT CYBER PARK Uzbekistan rezidentimiz",
+    secure_item_4: "Biz IT CYBER PARK Uzbekistan rezidentimiz",
   },
   portfolio: {
     title: "Bizning startaplarimiz",
-    btn: "Batafsil",
+    btn: "Saytga o`tish",
   },
   what_we: {
     title: "Biz nima bilan shug'ullanamiz",
@@ -53,11 +53,13 @@ export default {
     name: "Ismingiz",
     phone: "Telefon raqamingiz",
     btn: "Loyihani baholash",
-    description: "Loyiha tavsifi"
+    description: "Loyiha tavsifi",
+    name_validate: "Iltimos, ismingizni kiriting",
+    phone_validate: "Iltimos, telefon raqamingizni kiriting",
   },
   logo_text: "Dasturiy ta'minot ishlab chiqaruvchi kompaniya",
   partners: {
     title: "Bizning hamkorlarimiz",
-    subtitle: "Ishlash yoqimli"
-  }
+    subtitle: "Ishlash yoqimli",
+  },
 };
