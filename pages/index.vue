@@ -296,12 +296,11 @@ export default {
       name: "",
       description: "",
     },
+    // rules: {
+    //   nameRules: (value) => !!value || this.$t("contact.nameRules"),
+    //   phoneRules: (value) => !!value || [this.$t("contact.phone_validate")],
+    // },
     desc: [(v) => v.length <= 300 || "Max 300 characters"],
-    phoneRules: [
-      (v) => !!v || "Phone is required",
-      (v) => (v && v.length <= 14) || "Name must be less than 12 characters",
-    ],
-    nameRules: [(v) => !!v || "Phone is required"],
   }),
   watch: {
     phone(val) {
@@ -309,6 +308,14 @@ export default {
         const phone = val.replace("(", "").replace(")", "").replaceAll(" ", "");
         this.request.phone = `+998${phone}`;
       }
+    },
+  },
+  computed: {
+    nameRules() {
+      return [(v) => !!v || this.$t("contact.name_validate")];
+    },
+    phoneRules() {
+      return [(v) => !!v || this.$t("contact.phone_validate")];
     },
   },
   methods: {

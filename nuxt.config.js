@@ -88,6 +88,8 @@ export default {
   i18n: {
     useCookie: true,
     alwaysRedirect: true,
+    detectBrowserLanguage: false,
+    strategy: "prefix",
     locales: [
       {
         code: "ru",
@@ -145,5 +147,6 @@ export default {
   server: {
     host: "0",
     port: "7777",
+    timing: false,
   },
 };

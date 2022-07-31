@@ -32,7 +32,7 @@ export default {
   },
   portfolio: {
     title: "Our startups",
-    btn: "More",
+    btn: "Go to",
   },
   what_we: {
     title: "What are we doing",
@@ -55,6 +55,8 @@ export default {
     phone: "Your phone number",
     btn: "Rate the project",
     description: "Project description",
+    name_validate: "Please enter your name",
+    phone_validate: "Please enter your phone number",
   },
   logo_text: "Software development company",
   partners: {

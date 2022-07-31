@@ -32,7 +32,7 @@ export default {
   },
   portfolio: {
     title: "Наши стартапы",
-    btn: "Подробнее",
+    btn: "Перейти на сайт",
   },
   what_we: {
     title: "Чем мы занимаемся",
@@ -53,11 +53,13 @@ export default {
     name: "Ваше имя",
     phone: "Ваш телефон",
     btn: "Оценить проект",
-    description: "Описание проекта"
+    description: "Описание проекта",
+    name_validate: "Пожалуйста, введите ваше имя",
+    phone_validate: "Пожалуйста введите ваш номер телефона",
   },
   logo_text: "Компания-разработчик ПО",
   partners: {
     title: "Наши ПартнЁры",
-    subtitle: "Приятно работать с"
-  }
+    subtitle: "Приятно работать с",
+  },
 };
