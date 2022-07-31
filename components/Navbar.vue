@@ -13,7 +13,9 @@
       <div class="nav-links" :class="{ opened: menuIsActive }">
         <div class="sidebar-logo">
           <img src="/logo-only.svg" alt="logo" />
-          <nuxt-link to="#main" class="white--text text-h6 ml-4 mobile-logo">Asgardia</nuxt-link>
+          <nuxt-link to="#main" class="white--text text-h6 ml-4 mobile-logo"
+            >Asgardia</nuxt-link
+          >
           <v-spacer />
           <i class="bx bx-x" @click="menuEventButton"></i>
         </div>
@@ -27,9 +29,9 @@
           <li>
             <a href="#portfolio">{{ $t("navbar.portfolio") }}</a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#price">{{ $t("navbar.price") }}</a>
-          </li>
+          </li> -->
           <li>
             <a href="#contact">{{ $t("navbar.contact") }}</a>
           </li>
@@ -38,7 +40,7 @@
       <v-spacer />
       <div class="navbar__controls d-flex">
         <img class="navbar__icon" src="/phone.svg" alt="phone icon" />
-        <a href="tel:+998998573216" class=" amber--text">+998 (99) 857 32 16</a>
+        <a href="tel:+998998573216" class="amber--text">+998 (99) 857 32 16</a>
         <v-menu v-model="languageMenu" offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
@@ -82,8 +84,8 @@ export default {
   data() {
     return {
       language: [
-        { title: "En", code: "en", icon: "/us.svg" },
-        { title: "Uz", code: "uz", icon: "/uz.svg" },
+        // { title: "En", code: "en", icon: "/us.svg" },
+        // { title: "Uz", code: "uz", icon: "/uz.svg" },
         // { title: "Ru", code: "ru", icon: "/ru.svg" },
       ],
       activeLang: "",
@@ -95,23 +97,23 @@ export default {
   },
   watch: {
     activeLang(val) {
-      if(val == 'En') {
+      if (val == "En") {
         this.language = [
           { title: "Uz", code: "uz", icon: "/uz.svg" },
           { title: "Ru", code: "ru", icon: "/ru.svg" },
-        ]
-      } else if(val == 'Ru') {
+        ];
+      } else if (val == "Ru") {
         this.language = [
           { title: "En", code: "en", icon: "/us.svg" },
           { title: "Uz", code: "uz", icon: "/uz.svg" },
-        ]
-      } else if(val == 'Uz') {
+        ];
+      } else if (val == "Uz") {
         this.language = [
           { title: "En", code: "en", icon: "/us.svg" },
           { title: "Ru", code: "ru", icon: "/ru.svg" },
-        ]
+        ];
       }
-    }
+    },
   },
   methods: {
     handleMenuItemClick(lang) {
@@ -122,32 +124,49 @@ export default {
     },
   },
   mounted() {
-    const nav = document.querySelector("nav");
-    const go_up = document.querySelector(".go-up");
+    const lang = document.cookie.replace("i18n_redirected=", "");
+    if (lang == "en") {
+      this.language = [
+        { title: "Uz", code: "uz", icon: "/uz.svg" },
+        { title: "Ru", code: "ru", icon: "/ru.svg" },
+      ];
+    } else if (lang == "ru") {
+      this.language = [
+        { title: "En", code: "en", icon: "/us.svg" },
+        { title: "Uz", code: "uz", icon: "/uz.svg" },
+      ];
+    } else if (lang == "uz") {
+      this.language = [
+        { title: "En", code: "en", icon: "/us.svg" },
+        { title: "Ru", code: "ru", icon: "/ru.svg" },
+      ];
+    }
 
-    window.addEventListener('scroll', () => {
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
-        nav.classList.add('nav_color');
-      } else  {
-        nav.classList.remove('nav_color');
+        nav.classList.add("nav_color");
+      } else {
+        nav.classList.remove("nav_color");
       }
-    })
-    const links = document.querySelectorAll('.links > li');
-    const logo = document.querySelector('.mobile-logo');
-    window.addEventListener('click', (e) => {
-      if(e.pointerId == 82) {
+    });
+    const links = document.querySelectorAll(".links > li");
+    const logo = document.querySelector(".mobile-logo");
+    window.addEventListener("click", (e) => {
+      if (e.pointerId == 82) {
         this.menuIsActive = !this.menuIsActive;
       }
-    })
-    logo.addEventListener('click', () => {
+    });
+    logo.addEventListener("click", () => {
       this.menuIsActive = !this.menuIsActive;
-    })
-    links.forEach(link => {
-      link.addEventListener('click', () => {
+    });
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
         this.menuIsActive = !this.menuIsActive;
-      })
-    })
-  }
+      });
+    });
+  },
 };
 </script>
 
@@ -205,7 +224,7 @@ nav {
   height: 80px;
   width: 100vw;
   z-index: 100000;
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
   padding: 10px 0;
 }
 

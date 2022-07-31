@@ -21,7 +21,10 @@ export default {
         rel: "stylesheet",
         href: "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css",
       },
-      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"}
+      {
+        rel: "stylesheet",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css",
+      },
     ],
     script: [
       {
@@ -49,7 +52,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "~/plugins/swiper.client.js"},
+    { src: "~/plugins/swiper.client.js" },
     { src: "~/plugins/aos.client.js", mode: "client" },
     { src: "~/plugins/v-mask.js", mode: "client" },
   ],
@@ -75,8 +78,8 @@ export default {
         // activeSection: 0,
         // mouseWheelSensitivity: 120,
         // showIndicators: true
-      }
-    ]
+      },
+    ],
   ],
   toast: {
     position: "top-right",
@@ -140,7 +143,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   server: {
-    host: 0,
-    port: 7777,
+    host: "0",
+    port: "7777",
   },
 };

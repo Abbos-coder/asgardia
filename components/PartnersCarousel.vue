@@ -7,27 +7,27 @@
           <!-- Slides -->
           <div class="swiper-slide" data-swiper-autoplay="2000">
             <div class="slide-images">
-              <img src="~/assets/images/sola-1.svg" alt="partners"/>
+              <img src="~/assets/images/sola-1.svg" alt="partners" />
             </div>
           </div>
           <div class="swiper-slide" data-swiper-autoplay="2000">
             <div class="slide-images">
-              <img src="~/assets/images/usoft.svg" alt="partners"/>
+              <img src="~/assets/images/usoft.svg" alt="partners" />
             </div>
           </div>
           <div class="swiper-slide" data-swiper-autoplay="2000">
             <div class="slide-images">
-              <img src="~/assets/images/cyber-park.png" alt="partners"/>
+              <img src="~/assets/images/cyber-park.png" alt="partners" />
             </div>
           </div>
         </div>
         <!-- If we need navigation buttons -->
         <div class="swiper-prev">
-          <img src="~/assets/images/angle-left.svg" alt="arrow">
+          <img src="~/assets/images/angle-left.svg" alt="arrow" />
         </div>
 
         <div class="swiper-next">
-          <img src="~/assets/images/angle-right.svg" alt="arrow">
+          <img src="~/assets/images/angle-right.svg" alt="arrow" />
         </div>
 
         <!-- If we need scrollbar -->
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Swiper, {Autoplay, Navigation, Pagination} from "swiper";
+import Swiper, { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/swiper-bundle.css";
 
 export default {
@@ -64,7 +64,6 @@ export default {
         prevEl: ".swiper-prev",
       },
 
-
       // Responsive breakpoints
       breakpoints: {
         // when window width is >= 320px
@@ -87,7 +86,7 @@ export default {
         },
         1366: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
         1920: {
           slidesPerView: 3,
@@ -95,9 +94,8 @@ export default {
         },
       },
     });
-  }
-
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -109,5 +107,4 @@ export default {
 .swiper {
   width: 1250px;
 }
-
 </style>

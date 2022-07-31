@@ -39,8 +39,8 @@ export default {
     card_1:
       " Development of applications for large, medium and small businesses.",
     card_2: "Development of mobile applications.",
-    card_3: "Those. expertise, advice and technical support.",
-    card_4_1: "Outsourcing.",
+    card_3: "Technical expertise, advice and technical support.",
+    card_4_1: "Outsourcing",
     card_4_2: "and",
     card_4_3: "outstaffing.",
   },
@@ -54,11 +54,11 @@ export default {
     name: "Your name",
     phone: "Your phone number",
     btn: "Rate the project",
-    description: "Project description"
+    description: "Project description",
   },
   logo_text: "Software development company",
   partners: {
     title: "Our partners",
-    subtitle: "Nice to work with"
-  }
+    subtitle: "Glad to work with",
+  },
 };

@@ -6,7 +6,11 @@ body,
 }
 
 .header {
-  background: radial-gradient(29.13% 78.33% at 0% 100%, #015EA5 0%, #101A33 100%) ;
+  background: radial-gradient(
+    29.13% 78.33% at 0% 100%,
+    #015ea5 0%,
+    #101a33 100%
+  );
 }
 
 .sidebar-logo > .spacer {
@@ -58,7 +62,7 @@ body,
   align-items: center;
 
   &:before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 100%;
@@ -82,6 +86,7 @@ body,
   margin: 0 auto 0;
   height: 102vh;
   color: #ffffff;
+  padding-top: 140px;
 
   &__title {
     @media (max-width: 1440px) {
@@ -117,7 +122,7 @@ body,
     line-height: 120%;
     text-transform: uppercase;
     @media (max-width: 1440px) {
-      font-size: 45px;
+      font-size: 65px;
     }
     @media (max-width: 800px) {
       font-size: 50px;
@@ -134,7 +139,6 @@ body,
   }
 
   &__info {
-
     div {
       margin-bottom: 80px;
       @media (max-width: 1440px) {
@@ -205,7 +209,7 @@ body,
   z-index: 1000;
   width: 100vw;
   //height: 100vh;
-  background: #101A33 !important;
+  background: #101a33 !important;
 
   &__mission,
   &__secure {
@@ -269,10 +273,10 @@ body,
       padding-left: 15px;
     }
     padding-left: 85px;
-    color: #010D2B;
+    color: #010d2b;
   }
   .block-right {
-    background: #0D284B;
+    background: #0d284b;
   }
 
   .block-left,
@@ -326,7 +330,6 @@ body,
   .swiper {
     max-width: 450px !important;
     overflow: hidden !important;
-
   }
 }
 
@@ -354,9 +357,8 @@ body,
 
 .info-cards {
   width: 100%;
-  //height: 100vh;
   padding: 92px 0;
-  background: #E3E3E3;
+  background: #e3e3e3;
 
   &__title {
     @media (max-width: 414px) {
@@ -373,14 +375,13 @@ body,
   &__item {
     margin-right: 5px;
     min-height: 249px;
-    min-width: 315px;
     padding: 32px 28px;
     background: #111b34;
     border-radius: 8px;
     text-align: center;
-     //transition: all ease-in-out 0.3s !important;
+    // transition: all ease-in-out 0s !important;
     &:hover {
-      transform: translateY(-10px) rotate(3deg) !important;
+      transform: translateY(-10px) !important;
       background: #000;
     }
   }
@@ -394,11 +395,11 @@ body,
   }
 
   &__body {
-    gap: 20px;
-    @media (max-width: 600px) {
-      flex-direction: column;
-      align-items: center;
-    }
+    // gap: 20px;
+    // @media (max-width: 600px) {
+    //   flex-direction: column;
+    //   align-items: center;
+    // }
   }
 }
 
@@ -419,7 +420,6 @@ body,
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 64px;
-
   }
 
   &__middle {
@@ -462,7 +462,7 @@ body,
       @media (max-width: 450px) {
         margin-bottom: 30px;
       }
-      margin-bottom: 64px;
+      margin-bottom: 30px;
       font-weight: 500;
       font-size: 18px;
       line-height: 23px;
@@ -542,12 +542,13 @@ body,
   left: -25px !important;
   color: #ffffff !important;
   &:after {
-    content: '';
+    content: "";
     width: 20px !important;
   }
 }
 
-.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
   opacity: 1 !important;
   pointer-events: all;
 }
@@ -637,7 +638,7 @@ body,
       font-size: 28px;
     }
     text-transform: uppercase;
-    color: #010D2B;
+    color: #010d2b;
     font-weight: 500;
     font-size: 40px;
     line-height: 120%;
@@ -652,7 +653,7 @@ body,
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;
-    color: #010D2B;
+    color: #010d2b;
     margin-top: 32px;
     margin-bottom: 50px;
   }
@@ -708,14 +709,15 @@ body,
   }
 }
 
-.v-menu__content--fixed, .log {
+.v-menu__content--fixed,
+.log {
   z-index: 100000 !important;
 }
 .mobile-logo {
   text-decoration: none;
 }
 .portfolio-info {
-  background: linear-gradient(130.62deg, #015EA5 -31.3%, #10054D 83.88%);
+  background: linear-gradient(130.62deg, #015ea5 -31.3%, #10054d 83.88%);
   &__title {
     @media (max-width: 450px) {
       flex-direction: column;
@@ -728,7 +730,7 @@ body,
     font-size: 32px;
     line-height: 120%;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 66px;
     span {
       @media (max-width: 450px) {
@@ -747,7 +749,7 @@ body,
       font-weight: 400;
       font-size: 18px;
       line-height: 160%;
-      color: #FFFFFF;
+      color: #ffffff;
       width: min(100%, 636px);
     }
   }
@@ -767,15 +769,14 @@ body,
   &__title {
     font-weight: 700;
     font-size: 20px;
-    color: #010D2B;
+    color: #010d2b;
     margin-bottom: 32px;
   }
   &__item-head {
-    background: linear-gradient(130.62deg, #015EA5 -31.3%, #10054D 83.88%);
+    background: linear-gradient(130.62deg, #015ea5 -31.3%, #10054d 83.88%);
     border-radius: 8px;
     color: #ffffff;
     padding: 32px 25px;
-
   }
   &__text {
     margin-top: 16px;
@@ -783,11 +784,11 @@ body,
     font-size: 18px;
     line-height: 160%;
     letter-spacing: -0.03em;
-    color: #010D2B;
+    color: #010d2b;
   }
 }
 .line {
-  background: #101A33;
+  background: #101a33;
   margin-bottom: 100px;
   height: 2px !important;
 }
@@ -801,7 +802,6 @@ body,
     width: 100%;
     height: 100%;
   }
-
 }
 .advantages {
   // .advantages__title
@@ -809,7 +809,7 @@ body,
     font-weight: 700;
     font-size: 20px;
     line-height: 160%;
-    color: #010D2B;
+    color: #010d2b;
     margin-bottom: 32px;
   }
 
@@ -821,7 +821,7 @@ body,
 
   // .advantages__card
   &__card {
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 5px 5px 41px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     position: relative;
@@ -842,8 +842,7 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(130.62deg, #015EA5 -31.3%, #10054D 83.88%);
-
+    background: linear-gradient(130.62deg, #015ea5 -31.3%, #10054d 83.88%);
   }
 
   // .advantages__card--title
@@ -853,14 +852,14 @@ body,
     line-height: 160%;
     letter-spacing: -0.03em;
     text-transform: uppercase;
-    color: #010D2B;
+    color: #010d2b;
     margin-top: 16px;
   }
 
   // .advantages__card--line
   &__card--line {
     height: 2px;
-    background: #101A33;
+    background: #101a33;
     margin: 16px 0;
   }
 
@@ -870,8 +869,6 @@ body,
     font-size: 18px;
     line-height: 160%;
     letter-spacing: -0.03em;
-    color: #010D2B;
+    color: #010d2b;
   }
 }
-
-

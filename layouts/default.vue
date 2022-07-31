@@ -1,11 +1,11 @@
 <template>
   <v-app dark>
-      <Navbar />
-      <Nuxt />
+    <Navbar />
+    <Nuxt />
     <div class="go-up" @click="goTop">
       <v-icon color="white" size="45">mdi-chevron-up</v-icon>
     </div>
-      <Footer />
+    <Footer />
   </v-app>
 </template>
 
@@ -24,14 +24,14 @@ export default {
   },
   mounted() {
     const go_up = document.querySelector(".go-up");
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 150) {
         go_up.classList.remove("hide");
-      } else  {
+      } else {
         go_up.classList.add("hide");
       }
-    })
-  }
+    });
+  },
 };
 </script>
 <style>
@@ -41,10 +41,14 @@ body {
 }
 .container {
   max-width: 1440px;
+  padding: 25px;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 }
-@media (min-width: 1904px) {
+/* @media (min-width: 1904px) {
   .container {
     max-width: 1320px;
   }
-}
+} */
 </style>
