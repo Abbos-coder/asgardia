@@ -146,7 +146,7 @@
         {{ $t("what_we.title") }}
       </div>
       <div class="info-cards__body">
-        <v-row class="container">
+        <v-row class="container mx-auto">
           <v-col cols="12" lg="3" md="3" sm="6" xs="12">
             <div
               class="info-cards__item"
